@@ -1,0 +1,2226 @@
+Public Class Form1
+    'Boolean Variable Status Declaration
+    Dim StatWeapon As Boolean = True
+    Dim StatMod1 As Boolean = True
+    Dim StatMod2 As Boolean = True
+    Dim StatMod3 As Boolean = True
+    Dim StatNade As Boolean = False
+    Dim StatSec As Boolean = False
+    Dim StatCharGreen As Boolean = False
+    Dim StatCharBlue As Boolean = False
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        Dim generator As New Random
+        Dim Color1, Color2, Color3 As Integer
+        Dim EmptySlot As Integer
+        Dim ModlistP As New List(Of Integer)
+        Dim ModlistY As New List(Of Integer)
+        Dim ModlistR As New List(Of Integer)
+        Dim ModlistB As New List(Of Integer)
+        Dim Modlistcheck As Integer
+        Dim GunList As New List(Of Integer)
+        Dim NadeList As New List(Of Integer)
+        Dim CharList As New List(Of Integer)
+        Dim Count As Integer = 4
+        Dim GunMod1, GunMod2, GunMod3 As Integer
+        Dim WeaponCategoryInt1, WeaponCategoryInt2, WeaponCategoryInt3, WeaponCategoryInt4, WeaponCategoryInt5, WeaponCategoryInt6, WeaponCategoryInt7, WeaponCategoryInt8, ChallengeInt, HardModeInt As Integer
+
+        Dim WeaponCategory, Primary, Secondary, Nade, CharGreen, CharBlue, Challenge, EmptyRandom As Integer
+
+        ' Purple = 1
+        ' Yellow = 2
+        ' Red = 3
+        ' Blue = 4
+
+        'Empty Mod Slots
+        My.Settings.Reload()
+
+        EmptySlot = My.Settings.EmptyMods
+
+        picMod1.Image = My.Resources.None
+        picMod2.Image = My.Resources.None
+        picMod3.Image = My.Resources.None
+
+        If EmptySlot = 1 Then
+            Color1 = generator.Next(1, 6)
+            Color2 = generator.Next(1, 6)
+            Color3 = generator.Next(1, 6)
+        Else
+            Color1 = generator.Next(1, 5)
+            Color2 = generator.Next(1, 5)
+            Color3 = generator.Next(1, 5)
+        End If
+        'Loop Prevention + Comparing Colors
+
+        My.Settings.Reload()
+        If My.Settings.ModsPNo = 1 Then
+            Count -= 1
+        End If
+        If My.Settings.ModsYNo = 1 Then
+            Count -= 1
+        End If
+        If My.Settings.ModsRNo = 1 Then
+            Count -= 1
+        End If
+        If My.Settings.ModsBNo = 1 Then
+            Count -= 1
+        End If
+        If Count = 0 Then
+            Color1 = 0
+            Color2 = 0
+            Color3 = 0
+        ElseIf Count = 1 Then
+            Color2 = 0
+            Color3 = 0
+        ElseIf Count = 2 Then
+            If Color2 = Color1 Then
+                If EmptySlot = 1 Then
+                    If Color2 = 5 Then
+                    Else
+                        Do
+                            Color2 = generator.Next(1, 6)
+                        Loop While Color2 = Color1 Or Color2 = 5
+                    End If
+                Else
+                    Do
+                        Color2 = generator.Next(1, 5)
+                    Loop While Color2 = Color1
+                End If
+            End If
+            Color3 = 0
+        Else
+            'Comparing Colors
+            If Color2 = Color1 Then
+                If EmptySlot = 1 Then
+                    If Color2 = 5 Then
+                    Else
+                        Do
+                            Color2 = generator.Next(1, 6)
+                        Loop While Color2 = Color1
+                    End If
+                Else
+                    Do
+                        Color2 = generator.Next(1, 5)
+                    Loop While Color2 = Color1
+                End If
+            End If
+            If Color3 = Color2 Or Color3 = Color1 Then
+                If EmptySlot = 1 Then
+                    If Color3 = 5 Then
+                    Else
+                        Do
+                            Color3 = generator.Next(1, 6)
+                        Loop While Color3 = Color2 Or Color3 = Color1
+                    End If
+                Else
+                    Do
+                        Color3 = generator.Next(1, 5)
+                    Loop While Color3 = Color2 Or Color3 = Color1
+                End If
+            End If
+        End If
+
+        If StatMod1 = False Then
+            Color1 = "0"
+        End If
+        If StatMod2 = False Then
+            Color2 = "0"
+        End If
+        If StatMod3 = False Then
+            Color3 = "0"
+        End If
+
+        Count = 0
+        ModlistP.Clear()
+        ModlistY.Clear()
+        ModlistR.Clear()
+        ModlistB.Clear()
+
+        If My.Settings.ModsP1 = 1 Then
+            ModlistP.Add(1)
+        End If
+        If My.Settings.ModsP2 = 1 Then
+            ModlistP.Add(2)
+        End If
+        If My.Settings.ModsP3 = 1 Then
+            ModlistP.Add(3)
+        End If
+        If My.Settings.ModsP4 = 1 Then
+            ModlistP.Add(4)
+        End If
+        If My.Settings.ModsP5 = 1 Then
+            ModlistP.Add(5)
+        End If
+
+        If My.Settings.ModsY1 = 1 Then
+            ModlistY.Add(1)
+        End If
+        If My.Settings.ModsY2 = 1 Then
+            ModlistY.Add(2)
+        End If
+        If My.Settings.ModsY3 = 1 Then
+            ModlistY.Add(3)
+        End If
+        If My.Settings.ModsY4 = 1 Then
+            ModlistY.Add(4)
+        End If
+        If My.Settings.ModsY5 = 1 Then
+            ModlistY.Add(5)
+        End If
+        If My.Settings.ModsY6 = 1 Then
+            ModlistY.Add(6)
+        End If
+        If My.Settings.ModsY7 = 1 Then
+            ModlistY.Add(7)
+        End If
+
+        If My.Settings.ModsR1 = 1 Then
+            ModlistR.Add(1)
+        End If
+        If My.Settings.ModsR2 = 1 Then
+            ModlistR.Add(2)
+        End If
+        If My.Settings.ModsR3 = 1 Then
+            ModlistR.Add(3)
+        End If
+        If My.Settings.ModsR4 = 1 Then
+            ModlistR.Add(4)
+        End If
+        If My.Settings.ModsR5 = 1 Then
+            ModlistR.Add(5)
+        End If
+        If My.Settings.ModsR6 = 1 Then
+            ModlistR.Add(6)
+        End If
+        If My.Settings.ModsR7 = 1 Then
+            ModlistR.Add(7)
+        End If
+        If My.Settings.ModsR8 = 1 Then
+            ModlistR.Add(8)
+        End If
+        If My.Settings.ModsR9 = 1 Then
+            ModlistR.Add(9)
+        End If
+        If My.Settings.ModsR10 = 1 Then
+            ModlistR.Add(10)
+        End If
+
+        If My.Settings.ModsB1 = 1 Then
+            ModlistB.Add(1)
+        End If
+        If My.Settings.ModsB2 = 1 Then
+            ModlistB.Add(2)
+        End If
+        If My.Settings.ModsB3 = 1 Then
+            ModlistB.Add(3)
+        End If
+        If My.Settings.ModsB4 = 1 Then
+            ModlistB.Add(4)
+        End If
+        If My.Settings.ModsB5 = 1 Then
+            ModlistB.Add(5)
+        End If
+        If My.Settings.ModsB6 = 1 Then
+            ModlistB.Add(6)
+        End If
+        If My.Settings.ModsB7 = 1 Then
+            ModlistB.Add(7)
+        End If
+        If My.Settings.ModsB8 = 1 Then
+            ModlistB.Add(8)
+        End If
+        If My.Settings.ModsB9 = 1 Then
+            ModlistB.Add(9)
+        End If
+
+ColorAgain:
+        'Color1
+        My.Settings.Reload()
+        Select Case Color1
+            Case 1
+                If ModlistP.Count = 0 Then
+                    Do
+                        Color1 = generator.Next(1, 5)
+                    Loop Until Color1 <> "1" And Color1 <> Color2 And Color1 <> Color3
+                    GoTo ColorAgain
+                Else
+                    Do
+                        GunMod1 = generator.Next(1, 6)
+                    Loop Until ModlistP.Contains(GunMod1)
+                    picMod1.Image = My.Resources.ResourceManager.GetObject("purple_" & GunMod1.ToString())
+                End If
+            Case 2
+                If ModlistY.Count = 0 Then
+                    Do
+                        Color1 = generator.Next(1, 5)
+                    Loop Until Color1 <> "2" And Color1 <> Color2 And Color1 <> Color3
+                    GoTo ColorAgain
+                Else
+                    Do
+                        GunMod1 = generator.Next(1, 8)
+                    Loop Until ModlistY.Contains(GunMod1)
+                    picMod1.Image = My.Resources.ResourceManager.GetObject("yellow_" & GunMod1.ToString())
+                End If
+            Case 3
+                If ModlistR.Count = 0 Then
+                    Do
+                        Color1 = generator.Next(1, 5)
+                    Loop Until Color1 <> "3" And Color1 <> Color2 And Color1 <> Color3
+                    GoTo ColorAgain
+                Else
+                    Do
+                        GunMod1 = generator.Next(1, 11)
+                    Loop Until ModlistR.Contains(GunMod1)
+                    picMod1.Image = My.Resources.ResourceManager.GetObject("red_" & GunMod1.ToString())
+                End If
+            Case 4
+                If ModlistB.Count = 0 Then
+                    Do
+                        Color1 = generator.Next(1, 5)
+                    Loop Until Color1 <> "4" And Color1 <> Color2 And Color1 <> Color3
+                    GoTo ColorAgain
+                Else
+                    Do
+                        GunMod1 = generator.Next(1, 10)
+                    Loop Until ModlistB.Contains(GunMod1)
+                    picMod1.Image = My.Resources.ResourceManager.GetObject("blue_" & GunMod1.ToString())
+                End If
+            Case 5
+                picMod1.Image = My.Resources.Empty
+        End Select
+        'Color2
+        My.Settings.Reload()
+        Select Case Color2
+            Case 1
+                If ModlistP.Count = 0 Then
+                    Do
+                        Color2 = generator.Next(1, 5)
+                    Loop Until Color2 <> "1" And Color2 <> Color1 And Color2 <> Color3
+                    GoTo ColorAgain
+                Else
+                    Do
+                        GunMod2 = generator.Next(1, 6)
+                    Loop Until ModlistP.Contains(GunMod2)
+                    picMod2.Image = My.Resources.ResourceManager.GetObject("purple_" & GunMod2.ToString())
+                End If
+            Case 2
+                If ModlistY.Count = 0 Then
+                    Do
+                        Color2 = generator.Next(1, 5)
+                    Loop Until Color2 <> "2" And Color2 <> Color1 And Color2 <> Color3
+                    GoTo ColorAgain
+                Else
+                    Do
+                        GunMod2 = generator.Next(1, 8)
+                    Loop Until ModlistY.Contains(GunMod2)
+                    picMod2.Image = My.Resources.ResourceManager.GetObject("yellow_" & GunMod2.ToString())
+                End If
+            Case 3
+                If ModlistR.Count = 0 Then
+                    Do
+                        Color2 = generator.Next(1, 5)
+                    Loop Until Color2 <> "3" And Color2 <> Color1 And Color2 <> Color3
+                    GoTo ColorAgain
+                Else
+                    Do
+                        GunMod2 = generator.Next(1, 11)
+                    Loop Until ModlistR.Contains(GunMod2)
+                    picMod2.Image = My.Resources.ResourceManager.GetObject("red_" & GunMod2.ToString())
+                End If
+            Case 4
+                If ModlistB.Count = 0 Then
+                    Do
+                        Color2 = generator.Next(1, 5)
+                    Loop Until Color2 <> "4" And Color2 <> Color1 And Color2 <> Color3
+                    GoTo ColorAgain
+                Else
+                    Do
+                        GunMod2 = generator.Next(1, 10)
+                    Loop Until ModlistB.Contains(GunMod2)
+                    picMod2.Image = My.Resources.ResourceManager.GetObject("blue_" & GunMod2.ToString())
+                End If
+            Case 5
+                picMod2.Image = My.Resources.Empty
+        End Select
+        'Color3
+        My.Settings.Reload()
+        Select Case Color3
+            Case 1
+                If ModlistP.Count = 0 Then
+                    Do
+                        Color3 = generator.Next(1, 5)
+                    Loop Until Color3 <> "1" And Color3 <> Color1 And Color3 <> Color2
+                    GoTo ColorAgain
+                Else
+                    Do
+                        GunMod3 = generator.Next(1, 6)
+                    Loop Until ModlistP.Contains(GunMod3)
+                    picMod3.Image = My.Resources.ResourceManager.GetObject("purple_" & GunMod3.ToString())
+                End If
+            Case 2
+                If ModlistY.Count = 0 Then
+                    Do
+                        Color3 = generator.Next(1, 5)
+                    Loop Until Color3 <> "2" And Color3 <> Color1 And Color3 <> Color2
+                    GoTo ColorAgain
+                Else
+                    Do
+                        GunMod3 = generator.Next(1, 8)
+                    Loop Until ModlistY.Contains(GunMod3)
+                    picMod3.Image = My.Resources.ResourceManager.GetObject("yellow_" & GunMod3.ToString())
+                End If
+            Case 3
+                If ModlistR.Count = 0 Then
+                    Do
+                        Color3 = generator.Next(1, 5)
+                    Loop Until Color3 <> "3" And Color3 <> Color1 And Color3 <> Color2
+                    GoTo ColorAgain
+                Else
+                    Do
+                        GunMod3 = generator.Next(1, 11)
+                    Loop Until ModlistR.Contains(GunMod3)
+                    picMod3.Image = My.Resources.ResourceManager.GetObject("red_" & GunMod3.ToString())
+                End If
+            Case 4
+                If ModlistB.Count = 0 Then
+                    Do
+                        Color3 = generator.Next(1, 5)
+                    Loop Until Color3 <> "4" And Color3 <> Color1 And Color3 <> Color2
+                    GoTo ColorAgain
+                Else
+                    Do
+                        GunMod3 = generator.Next(1, 10)
+                    Loop Until ModlistB.Contains(GunMod3)
+                    picMod3.Image = My.Resources.ResourceManager.GetObject("blue_" & GunMod3.ToString())
+                End If
+            Case 5
+                picMod3.Image = My.Resources.Empty
+            Case Else
+                picMod3.Image = My.Resources.None
+        End Select
+
+        'Weapon Randomization
+        'Loop Prevention
+        If StatWeapon = True Then
+            If My.Settings.WeapAssNo = 1 Then
+                WeaponCategoryInt1 = 1
+            Else : WeaponCategoryInt1 = 0
+            End If
+            If My.Settings.WeapLMGNo = 1 Then
+                WeaponCategoryInt2 = 2
+            Else : WeaponCategoryInt2 = 0
+            End If
+            If My.Settings.WeapRifleNo = 1 Then
+                WeaponCategoryInt3 = 3
+            Else : WeaponCategoryInt3 = 0
+            End If
+            If My.Settings.WeapShotNo = 1 Then
+                WeaponCategoryInt4 = 4
+            Else : WeaponCategoryInt4 = 0
+            End If
+            If My.Settings.WeapSMGNo = 1 Then
+                WeaponCategoryInt5 = 5
+            Else : WeaponCategoryInt5 = 0
+            End If
+            If My.Settings.WeapSniperNo = 1 Then
+                WeaponCategoryInt6 = 6
+            Else : WeaponCategoryInt6 = 0
+            End If
+            If My.Settings.WeapLegNo = 1 Then
+                WeaponCategoryInt7 = 7
+            Else : WeaponCategoryInt7 = 0
+            End If
+            If My.Settings.WeapExNo = 1 Then
+                WeaponCategoryInt8 = 8
+            Else : WeaponCategoryInt8 = 0
+            End If
+
+            If WeaponCategoryInt1 = 1 And WeaponCategoryInt2 = 2 And WeaponCategoryInt3 = 3 And WeaponCategoryInt4 = 4 And WeaponCategoryInt5 = 5 And _
+            WeaponCategoryInt6 = 6 And WeaponCategoryInt7 = 7 And WeaponCategoryInt8 = 8 Then
+                WeaponCategory = 0
+                GoTo IgnoreWeapon
+
+            Else
+                Do
+                    WeaponCategory = generator.Next(1, 9)
+                Loop Until WeaponCategory <> WeaponCategoryInt1 And WeaponCategory <> WeaponCategoryInt2 And WeaponCategory <> WeaponCategoryInt3 And _
+                    WeaponCategory <> WeaponCategoryInt4 And WeaponCategory <> WeaponCategoryInt5 And WeaponCategory <> WeaponCategoryInt6 And _
+                    WeaponCategory <> WeaponCategoryInt7 And WeaponCategory <> WeaponCategoryInt8
+            End If
+
+            Select Case WeaponCategory
+
+                Case 1 'Assault Rifles
+                    GunList.Clear()
+                    If My.Settings.WeapAss1 = 1 Then
+                        GunList.Add(1)
+                    End If
+                    If My.Settings.WeapAss2 = 1 Then
+                        GunList.Add(2)
+                    End If
+                    If My.Settings.WeapAss3 = 1 Then
+                        GunList.Add(3)
+                    End If
+                    If My.Settings.WeapAss4 = 1 Then
+                        GunList.Add(4)
+                    End If
+                    If My.Settings.WeapAss5 = 1 Then
+                        GunList.Add(5)
+                    End If
+                    If My.Settings.WeapAss6 = 1 Then
+                        GunList.Add(6)
+                    End If
+                    If My.Settings.WeapAss7 = 1 Then
+                        GunList.Add(7)
+                    End If
+                    If My.Settings.WeapAss8 = 1 Then
+                        GunList.Add(8)
+                    End If
+                    If My.Settings.WeapAss9 = 1 Then
+                        GunList.Add(9)
+                    End If
+                    If My.Settings.WeapAss10 = 1 Then
+                        GunList.Add(10)
+                    End If
+                    If My.Settings.WeapAss11 = 1 Then
+                        GunList.Add(11)
+                    End If
+                    'If My.Settings.WeapAss12 = 1 Then
+                    '    GunList.Add(12)
+                    'End If
+
+                    Do
+                        Primary = generator.Next(1, 12)
+                    Loop Until GunList.Contains(Primary)
+                    GunList.Clear()
+                    picWeapon.Image = My.Resources.ResourceManager.GetObject("asrifle_" & Primary.ToString())
+                Case 2 'LMGs
+                    GunList.Clear()
+                    If My.Settings.WeapLMG1 = 1 Then
+                        GunList.Add(1)
+                    End If
+                    If My.Settings.WeapLMG2 = 1 Then
+                        GunList.Add(2)
+                    End If
+                    If My.Settings.WeapLMG3 = 1 Then
+                        GunList.Add(3)
+                    End If
+                    If My.Settings.WeapLMG4 = 1 Then
+                        GunList.Add(4)
+                    End If
+                    If My.Settings.WeapLMG5 = 1 Then
+                        GunList.Add(5)
+                    End If
+                    If My.Settings.WeapLMG6 = 1 Then
+                        GunList.Add(6)
+                    End If
+                    If My.Settings.WeapLMG7 = 1 Then
+                        GunList.Add(7)
+                    End If
+                    'If My.Settings.WeapLMG8 = 1 Then
+                    '    GunList.Add(8)
+                    'End If
+                    Do
+                        Primary = generator.Next(1, 8)
+                    Loop Until GunList.Contains(Primary)
+                    GunList.Clear()
+                    picWeapon.Image = My.Resources.ResourceManager.GetObject("lmg_" & Primary.ToString())
+                Case 3 'Rifles
+                    GunList.Clear()
+                    If My.Settings.WeapRifle1 = 1 Then
+                        GunList.Add(1)
+                    End If
+                    If My.Settings.WeapRifle2 = 1 Then
+                        GunList.Add(2)
+                    End If
+                    If My.Settings.WeapRifle3 = 1 Then
+                        GunList.Add(3)
+                    End If
+                    If My.Settings.WeapRifle4 = 1 Then
+                        GunList.Add(4)
+                    End If
+                    If My.Settings.WeapRifle5 = 1 Then
+                        GunList.Add(5)
+                    End If
+                    If My.Settings.WeapRifle6 = 1 Then
+                        GunList.Add(6)
+                    End If
+                    'If My.Settings.WeapRifle7 = 1 Then
+                    '    GunList.Add(7)
+                    'End If
+                    Do
+                        Primary = generator.Next(1, 7)
+                    Loop Until GunList.Contains(Primary)
+                    GunList.Clear()
+                    picWeapon.Image = My.Resources.ResourceManager.GetObject("rifle_" & Primary.ToString())
+                Case 4 'Shotguns
+                    GunList.Clear()
+                    If My.Settings.WeapShot1 = 1 Then
+                        GunList.Add(1)
+                    End If
+                    If My.Settings.WeapShot2 = 1 Then
+                        GunList.Add(2)
+                    End If
+                    If My.Settings.WeapShot3 = 1 Then
+                        GunList.Add(3)
+                    End If
+                    If My.Settings.WeapShot4 = 1 Then
+                        GunList.Add(4)
+                    End If
+                    If My.Settings.WeapShot5 = 1 Then
+                        GunList.Add(5)
+                    End If
+                    'If My.Settings.WeapShot6 = 1 Then
+                    '    GunList.Add(6)
+                    'End If
+                    Do
+                        Primary = generator.Next(1, 6)
+                    Loop Until GunList.Contains(Primary)
+                    GunList.Clear()
+                    picWeapon.Image = My.Resources.ResourceManager.GetObject("shotgun_" & Primary.ToString())
+                Case 5 'SMGs
+                    GunList.Clear()
+                    If My.Settings.WeapSMG1 = 1 Then
+                        GunList.Add(1)
+                    End If
+                    If My.Settings.WeapSMG2 = 1 Then
+                        GunList.Add(2)
+                    End If
+                    If My.Settings.WeapSMG3 = 1 Then
+                        GunList.Add(3)
+                    End If
+                    If My.Settings.WeapSMG4 = 1 Then
+                        GunList.Add(4)
+                    End If
+                    If My.Settings.WeapSMG5 = 1 Then
+                        GunList.Add(5)
+                    End If
+                    If My.Settings.WeapSMG6 = 1 Then
+                        GunList.Add(6)
+                    End If
+                    If My.Settings.WeapSMG7 = 1 Then
+                        GunList.Add(7)
+                    End If
+                    If My.Settings.WeapSMG8 = 1 Then
+                        GunList.Add(8)
+                    End If
+                    If My.Settings.WeapSMG9 = 1 Then
+                        GunList.Add(9)
+                    End If
+                    If My.Settings.WeapSMG10 = 1 Then
+                        GunList.Add(10)
+                    End If
+                    'If My.Settings.WeapSMG11 = 1 Then
+                    '    GunList.Add(11)
+                    'End If
+                    Do
+                        Primary = generator.Next(1, 11)
+                    Loop Until GunList.Contains(Primary)
+                    GunList.Clear()
+                    picWeapon.Image = My.Resources.ResourceManager.GetObject("smg_" & Primary.ToString())
+                Case 6 'Snipers
+                    GunList.Clear()
+                    If My.Settings.WeapSniper1 = 1 Then
+                        GunList.Add(1)
+                    End If
+                    If My.Settings.WeapSniper2 = 1 Then
+                        GunList.Add(2)
+                    End If
+                    If My.Settings.WeapSniper3 = 1 Then
+                        GunList.Add(3)
+                    End If
+                    If My.Settings.WeapSniper4 = 1 Then
+                        GunList.Add(4)
+                    End If
+                    If My.Settings.WeapSniper5 = 1 Then
+                        GunList.Add(5)
+                    End If
+                    'If My.Settings.WeapSniper6 = 1 Then
+                    '    GunList.Add(6)
+                    'End If
+                    Do
+                        Primary = generator.Next(1, 6)
+                    Loop Until GunList.Contains(Primary)
+                    GunList.Clear()
+                    picWeapon.Image = My.Resources.ResourceManager.GetObject("sniper_" & Primary.ToString())
+                Case 7 'Legendaries
+                    GunList.Clear()
+                    If My.Settings.WeapLegPrim1 = 1 Then
+                        GunList.Add(1)
+                    End If
+                    If My.Settings.WeapLegPrim2 = 1 Then
+                        GunList.Add(2)
+                    End If
+                    If My.Settings.WeapLegPrim3 = 1 Then
+                        GunList.Add(3)
+                    End If
+                    If My.Settings.WeapLegPrim4 = 1 Then
+                        GunList.Add(4)
+                    End If
+                    If My.Settings.WeapLegPrim5 = 1 Then
+                        GunList.Add(5)
+                    End If
+                    If My.Settings.WeapLegPrim6 = 1 Then
+                        GunList.Add(6)
+                    End If
+                    If My.Settings.WeapLegPrim7 = 1 Then
+                        GunList.Add(7)
+                    End If
+                    If My.Settings.WeapLegPrim8 = 1 Then
+                        GunList.Add(8)
+                    End If
+                    If My.Settings.WeapLegPrim9 = 1 Then
+                        GunList.Add(9)
+                    End If
+                    'If My.Settings.WeapLeg13 = 1 Then
+                    '    GunList.Add(13)
+                    'End If
+                    Do
+                        Primary = generator.Next(1, 13)
+                    Loop Until GunList.Contains(Primary)
+                    GunList.Clear()
+                    picWeapon.Image = My.Resources.ResourceManager.GetObject("legendaryprim_" & Primary.ToString())
+                Case 8 'Explosives
+                    GunList.Clear()
+                    If My.Settings.WeapEx1 = 1 Then
+                        GunList.Add(1)
+                    End If
+                    If My.Settings.WeapEx2 = 1 Then
+                        GunList.Add(2)
+                    End If
+                    'If My.Settings.WeapLeg15 = 1 Then
+                    '    GunList.Add(3)
+                    'End If
+                    'If My.Settings.WeapLeg16 = 1 Then
+                    '    GunList.Add(4)
+                    'End If
+                    'If My.Settings.WeapEx3 = 1 Then
+                    '    GunList.Add(5)
+                    'End If
+                    Do
+                        Primary = generator.Next(1, 3)
+                    Loop Until GunList.Contains(Primary)
+                    GunList.Clear()
+                    picWeapon.Image = My.Resources.ResourceManager.GetObject("explosive_" & Primary.ToString())
+                Case Else
+                    MsgBox("Error, something went horribly wrong! A team of highly professional edgy quickswitchers is trying to resolve the issue, please restart the program for your own safety!")
+            End Select
+        Else : picWeapon.Image = My.Resources.Empty
+        End If
+IgnoreWeapon:
+
+        'Secondary Randomization
+        If StatSec = True Then
+            GunList.Clear()
+            If My.Settings.Sec1 = 1 Then
+                GunList.Add(1)
+            End If
+            If My.Settings.Sec2 = 1 Then
+                GunList.Add(2)
+            End If
+            If My.Settings.Sec3 = 1 Then
+                GunList.Add(3)
+            End If
+            If My.Settings.Sec4 = 1 Then
+                GunList.Add(4)
+            End If
+            If My.Settings.Sec5 = 1 Then
+                GunList.Add(5)
+            End If
+            If My.Settings.Sec6 = 1 Then
+                GunList.Add(6)
+            End If
+            If My.Settings.Sec7 = 1 Then
+                GunList.Add(7)
+            End If
+            If My.Settings.Sec8 = 1 Then
+                GunList.Add(8)
+            End If
+            If My.Settings.Sec9 = 1 Then
+                GunList.Add(9)
+            End If
+            If My.Settings.Sec10 = 1 Then
+                GunList.Add(10)
+            End If
+            If My.Settings.Sec11 = 1 Then
+                GunList.Add(11)
+            End If
+            If My.Settings.Sec12 = 1 Then
+                GunList.Add(12)
+            End If
+            If My.Settings.Sec13 = 1 Then
+                GunList.Add(13)
+            End If
+            If My.Settings.WeapLegSec1 = 1 Then
+                GunList.Add(14)
+            End If
+            If My.Settings.WeapLegSec2 = 1 Then
+                GunList.Add(15)
+            End If
+            If My.Settings.WeapLegSec3 = 1 Then
+                GunList.Add(16)
+            End If
+            If My.Settings.WeapLegSec4 = 1 Then
+                GunList.Add(17)
+            End If
+            If My.Settings.WeapLegSec5 = 1 Then
+                GunList.Add(18)
+            End If
+            'If My.Settings.Sec13 = 1 Then
+            '    GunList.Add(19)
+            'End If
+            If GunList.Count = 0 Then
+                picSecondary.Image = My.Resources.Empty
+            Else
+                Do
+                    Secondary = generator.Next(1, 19)
+                Loop Until GunList.Contains(Secondary)
+                Select Case Secondary
+                    Case 14
+                        picSecondary.Image = My.Resources.legendarysec_1
+                    Case 15
+                        picSecondary.Image = My.Resources.legendarysec_2
+                    Case 16
+                        picSecondary.Image = My.Resources.legendarysec_3
+                    Case 17
+                        picSecondary.Image = My.Resources.legendarysec_4
+                    Case 18
+                        picSecondary.Image = My.Resources.legendarysec_5
+                    Case Else
+                        picSecondary.Image = My.Resources.ResourceManager.GetObject("secondary_" & Secondary.ToString())
+                End Select
+                GunList.Clear()
+            End If
+        End If
+
+        'Nade Randomization
+        If StatNade = True Then
+            NadeList.Clear()
+            If My.Settings.Nade1 = 1 Then
+                NadeList.Add(1)
+            End If
+            If My.Settings.Nade2 = 1 Then
+                NadeList.Add(2)
+            End If
+            If My.Settings.Nade3 = 1 Then
+                NadeList.Add(3)
+            End If
+            If My.Settings.Nade4 = 1 Then
+                NadeList.Add(4)
+            End If
+            If My.Settings.Nade5 = 1 Then
+                NadeList.Add(5)
+            End If
+            If My.Settings.Nade6 = 1 Then
+                NadeList.Add(6)
+            End If
+            If My.Settings.Nade7 = 1 Then
+                NadeList.Add(7)
+            End If
+            'If My.Settings.Nade8 = 1 Then
+            '    NadeList.Add(8)
+            'End If
+            If NadeList.Count = 0 Then
+                picNade.Image = My.Resources.Empty
+            Else : Do
+                    Nade = generator.Next(1, 8)
+                Loop Until NadeList.Contains(Nade)
+                picNade.Image = My.Resources.ResourceManager.GetObject("nade_" & Nade.ToString())
+            End If
+            NadeList.Clear()
+        End If
+
+        'CharMod Green Randomization
+        If StatCharGreen = True Then
+            CharList.Clear()
+            If My.Settings.CharGreen1 = 1 Then
+                CharList.Add(1)
+            End If
+            If My.Settings.CharGreen2 = 1 Then
+                CharList.Add(2)
+            End If
+            If My.Settings.CharGreen3 = 1 Then
+                CharList.Add(3)
+            End If
+            If My.Settings.CharGreen4 = 1 Then
+                CharList.Add(4)
+            End If
+            If My.Settings.CharGreen5 = 1 Then
+                CharList.Add(5)
+            End If
+            If My.Settings.CharGreen6 = 1 Then
+                CharList.Add(6)
+            End If
+            If My.Settings.CharGreen7 = 1 Then
+                CharList.Add(7)
+            End If
+            If My.Settings.CharGreen8 = 1 Then
+                CharList.Add(8)
+            End If
+            'If My.Settings.CharGreen9 = 1 Then
+            '    CharList.Add(9)
+            'End If
+            If CharList.Count = 0 Then
+                picCharModGreen.Image = My.Resources.Empty
+            Else : Do
+                    CharGreen = generator.Next(1, 9)
+                Loop Until CharList.Contains(CharGreen)
+                picCharModGreen.Image = My.Resources.ResourceManager.GetObject("charmod_" & CharGreen.ToString())
+            End If
+            CharList.Clear()
+        End If
+
+        'CharMod Blue Randomization
+        If StatCharBlue = True Then
+            CharList.Clear()
+            If My.Settings.CharBlue1 = 1 Then
+                CharList.Add(1)
+            End If
+            If My.Settings.CharBlue2 = 1 Then
+                CharList.Add(2)
+            End If
+            If My.Settings.CharBlue3 = 1 Then
+                CharList.Add(3)
+            End If
+            If My.Settings.CharBlue4 = 1 Then
+                CharList.Add(4)
+            End If
+            If My.Settings.CharBlue5 = 1 Then
+                CharList.Add(5)
+            End If
+            If My.Settings.CharBlue6 = 1 Then
+                CharList.Add(6)
+            End If
+            'If My.Settings.CharBlue7 = 1 Then
+            '    CharList.Add(7)
+            'End If
+            If CharList.Count = 0 Then
+                picCharModBlue.Image = My.Resources.Empty
+            Else : Do
+                    CharBlue = generator.Next(1, 9)
+                Loop Until CharList.Contains(CharBlue)
+                picCharModBlue.Image = My.Resources.ResourceManager.GetObject("charmodb_" & CharBlue.ToString())
+            End If
+            CharList.Clear()
+        End If
+
+        'Challenge Randomization
+        If My.Settings.Challenges = 1 Then
+            Challenge = generator.Next(1, 4)
+            If Challenge = 1 Then
+                ChallengeInt = generator.Next(1, 25)
+                Select Case ChallengeInt
+                    Case 1
+                        ChallengeLabel1.Text = "It's in the workshop!"
+                        ChallengeLabel2.Text = "Unequip your player vehicle"
+                    Case 2
+                        ChallengeLabel1.Text = "You can't buy a new car for 100$!"
+                        ChallengeLabel2.Text = "Don't use car spawn stations!"
+                    Case 3
+                        ChallengeLabel1.Text = "Be realistic for a second..."
+                        ChallengeLabel2.Text = "Only shoot while in marksman-mode"
+                    Case 4
+                        ChallengeLabel1.Text = "Damn I feel sluggish"
+                        ChallengeLabel2.Text = "Don't sprint for an entire mission"
+                    Case 5
+                        ChallengeLabel1.Text = "Reverse Quickswitcher"
+                        ChallengeLabel2.Text = "Must use Primary + Secondary to kill someone"
+                    Case 6
+                        ChallengeLabel1.Text = "Spin to win! First kill someone with your"
+                        ChallengeLabel2.Text = "primary, then secondary, then nade and repeat"
+                    Case 7
+                        ChallengeLabel1.Text = "GET NOSCOOOOPED"
+                        ChallengeLabel2.Text = "Don't use marksman-mode"
+                    Case 8
+                        ChallengeLabel1.Text = "A trainy-day"
+                        ChallengeLabel2.Text = "Don't use your V-button"
+                    Case 9
+                        ChallengeLabel1.Text = "Come at me bro!"
+                        ChallengeLabel2.Text = "Teabag enemies visibly before shooting"
+                    Case 10
+                        ChallengeLabel1.Text = "This isn't CSS bunnyhop!"
+                        ChallengeLabel2.Text = "Don't use your jump-key"
+                    Case 11
+                        ChallengeLabel1.Text = "My knees don't work like they used to"
+                        ChallengeLabel2.Text = "Don't use your crouch button"
+                    Case 12
+                        ChallengeLabel1.Text = "Didn't mean to go there"
+                        ChallengeLabel2.Text = "Swap your keys for walking left and right"
+                    Case 13
+                        ChallengeLabel1.Text = "No going back!"
+                        ChallengeLabel2.Text = "Unbind your walk backwards key!"
+                    Case 14
+                        ChallengeLabel1.Text = "A real classic"
+                        ChallengeLabel2.Text = "Secondary only time!"
+                    Case 15
+                        ChallengeLabel1.Text = "How do gaem wurk"
+                        ChallengeLabel2.Text = "Don't use consumables or orange char mods"
+                    Case 16
+                        ChallengeLabel1.Text = "No Magazine left behind!"
+                        ChallengeLabel2.Text = "Unbind your reload-button for a mission"
+                    Case 17
+                        ChallengeLabel1.Text = "You decide!"
+                        ChallengeLabel2.Text = "Do not select your spawn!"
+                    Case 18
+                        ChallengeLabel1.Text = "No boom for you"
+                        ChallengeLabel2.Text = "Unequip your grenades for a mission"
+                    Case 19
+                        ChallengeLabel1.Text = "Make your presence heard!"
+                        ChallengeLabel2.Text = "Shoot when you respawn and walk back to the spot"
+                    Case 20
+                        ChallengeLabel1.Text = "When you've got time: 'Yeah I've got time'"
+                        ChallengeLabel2.Text = "Only do objectives in the last minute"
+                    Case 21
+                        ChallengeLabel1.Text = "I'll never learn"
+                        ChallengeLabel2.Text = "Always approach a spot from the same direction"
+                    Case 22
+                        ChallengeLabel1.Text = "SPEAK UP!"
+                        ChallengeLabel2.Text = "Turn your game volume to 0"
+                    Case 23
+                        ChallengeLabel1.Text = "What are you, a camper?"
+                        ChallengeLabel2.Text = "Constantly switch positions every 10 seconds"
+                    Case 24
+                        ChallengeLabel1.Text = "I don't have my license yet"
+                        ChallengeLabel2.Text = "You can only carsurf or be a passenger, no driving"
+                    Case 25
+                        ChallengeLabel1.Text = "Get off the sidewalk you maniac!"
+                        ChallengeLabel2.Text = "Only drive on the road, no sidewalk or back alleys!"
+                    Case 26
+                        ChallengeLabel1.Text = ""
+                        ChallengeLabel2.Text = ""
+                    Case Else
+                        ChallengeLabel1.Text = ""
+                        ChallengeLabel2.Text = ""
+                End Select
+            Else
+                ChallengeLabel1.Text = ""
+                ChallengeLabel2.Text = ""
+            End If
+        Else
+            ChallengeLabel1.Text = ""
+            ChallengeLabel2.Text = ""
+        End If
+
+
+        'Empty Slot Chance
+        If EmptySlot = 1 Then
+            EmptyRandom = generator.Next(1, 16)
+
+            Select Case EmptyRandom
+                Case 1
+                    If StatWeapon = True Then
+                        picWeapon.Image = My.Resources.Empty
+                        picMod1.Image = My.Resources.Empty
+                        picMod2.Image = My.Resources.Empty
+                        picMod3.Image = My.Resources.Empty
+                    End If
+                Case 2
+                    If StatSec = True And StatNade = True Then
+                        picSecondary.Image = My.Resources.Empty
+                        picNade.Image = My.Resources.Empty
+                    End If
+                Case 3
+                    If StatCharBlue = True And StatCharGreen = True Then
+                        picCharModBlue.Image = My.Resources.Empty
+                        picCharModGreen.Image = My.Resources.Empty
+                    End If
+            End Select
+        End If
+
+
+        'Hard Mode
+        If My.Settings.HardMode = 1 Then
+            'Mod Changes
+
+            'Increased chance for HS on Assault Rifles to get RS or HMS
+            Select Case WeaponCategory
+                Case 1
+                    If Color1 = "2" Or Color2 = "2" Or Color3 = "2" Then
+                        HardModeInt = generator.Next(1, 5)
+                        If HardModeInt = "1" And ModlistY.Contains("5" Or "6" Or "7") Then
+                            If Color1 = "2" Then
+                                Do
+                                    GunMod1 = generator.Next(5, 8)
+                                Loop Until ModlistY.Contains(GunMod1)
+                                picMod1.Image = My.Resources.ResourceManager.GetObject("yellow_" & GunMod1.ToString())
+                            ElseIf Color2 = "2" Then
+                                Do
+                                    GunMod2 = generator.Next(5, 8)
+                                Loop Until ModlistY.Contains(GunMod2)
+                                picMod2.Image = My.Resources.ResourceManager.GetObject("yellow_" & GunMod2.ToString())
+                            ElseIf Color3 = "2" Then
+                                Do
+                                    GunMod3 = generator.Next(5, 8)
+                                Loop Until ModlistY.Contains(GunMod3)
+                                picMod3.Image = My.Resources.ResourceManager.GetObject("yellow_" & GunMod3.ToString())
+                            End If
+                        ElseIf HardModeInt = "2" Then
+                            If ModlistY.Contains("1") Then
+                                If Color1 = "2" Then
+                                    picMod1.Image = My.Resources.yellow_1
+                                ElseIf Color2 = "2" Then
+                                    picMod2.Image = My.Resources.yellow_1
+                                ElseIf Color3 = "2" Then
+                                    picMod3.Image = My.Resources.yellow_1
+                                End If
+                            End If
+                        End If
+                    End If
+                    'ACES Rifle higher Mag Pull Chance
+                    If Primary = "2" And (Color2 = "4" Or Color3 = "4") Then
+                        HardModeInt = generator.Next(1, 3)
+                        If HardModeInt = "1" And ModlistB.Contains("7" Or "8" Or "9") Then
+                            If Color2 = "4" Then
+                                Do
+                                    GunMod2 = generator.Next(7, 10)
+                                Loop Until ModlistB.Contains(GunMod2)
+                                picMod2.Image = My.Resources.ResourceManager.GetObject("blue_" & GunMod2.ToString())
+                            ElseIf Color3 = "4" Then
+                                Do
+                                    GunMod3 = generator.Next(7, 10)
+                                Loop Until ModlistB.Contains(GunMod3)
+                                picMod3.Image = My.Resources.ResourceManager.GetObject("blue_" & GunMod3.ToString())
+                            End If
+                        End If
+                    End If
+
+        'Shotguns SMGs less RS
+                Case 4 And 5
+                    If Color1 = "2" Or Color2 = "2" Or Color3 = "2" Then
+                        HardModeInt = generator.Next(1, 4)
+                        If HardModeInt = "1" And ModlistY.Contains("2" Or "3" Or "4") Then
+                            If Color1 = "2" Then
+                                Do
+                                    GunMod1 = generator.Next(2, 5)
+                                Loop Until ModlistY.Contains(GunMod1)
+                                picMod1.Image = My.Resources.ResourceManager.GetObject("yellow_" & GunMod1.ToString())
+                            ElseIf Color2 = "2" Then
+                                Do
+                                    GunMod1 = generator.Next(2, 5)
+                                Loop Until ModlistY.Contains(GunMod2)
+                                picMod2.Image = My.Resources.ResourceManager.GetObject("yellow_" & GunMod2.ToString())
+                            ElseIf Color3 = "2" Then
+                                Do
+                                    GunMod1 = generator.Next(2, 5)
+                                Loop Until ModlistY.Contains(GunMod3)
+                                picMod3.Image = My.Resources.ResourceManager.GetObject("yellow_" & GunMod3.ToString())
+                            End If
+                        ElseIf HardModeInt = "2" And ModlistY.Contains("1") Then
+                            If Color1 = "2" Then
+                                picMod1.Image = My.Resources.yellow_1
+                            ElseIf Color2 = "2" Then
+                                picMod2.Image = My.Resources.yellow_1
+                            ElseIf Color3 = "2" Then
+                                picMod3.Image = My.Resources.yellow_1
+                            End If
+                        End If
+                    End If
+                    'ACES SMG Higher Mag Pull Chance
+                    If WeaponCategory = "5" Then
+                        If Primary = "1" And (Color2 = "4" Or Color3 = "4") Then
+                            HardModeInt = generator.Next(1, 3)
+                            If HardModeInt = "1" And ModlistB.Contains("7" Or "8" Or "9") Then
+                                If Color2 = "4" Then
+                                    Do
+                                        GunMod2 = generator.Next(7, 10)
+                                    Loop Until ModlistB.Contains(GunMod2)
+                                    picMod2.Image = My.Resources.ResourceManager.GetObject("blue_" & GunMod2.ToString())
+                                ElseIf Color3 = "4" Then
+                                    Do
+                                        GunMod3 = generator.Next(7, 10)
+                                    Loop Until ModlistB.Contains(GunMod3)
+                                    picMod3.Image = My.Resources.ResourceManager.GetObject("blue_" & GunMod3.ToString())
+                                End If
+                            End If
+                        End If
+                    End If
+                    'Sniper higher chance for RS
+                Case 6
+                    If Color1 = "2" Or Color2 = "2" Or Color3 = "2" Then
+                        If (GunMod1 = "1" Or GunMod1 = "2" Or GunMod1 = "3" Or GunMod1 = "4") And Color1 = "2" Then
+                            GunMod1 = generator.Next(5, 8)
+                            picMod1.Image = My.Resources.ResourceManager.GetObject("yellow_" & GunMod1.ToString())
+                        ElseIf (GunMod2 = "1" Or GunMod2 = "2" Or GunMod2 = "3" Or GunMod2 = "4") And Color2 = "2" Then
+                            GunMod2 = generator.Next(5, 8)
+                            picMod2.Image = My.Resources.ResourceManager.GetObject("yellow_" & GunMod2.ToString())
+                        ElseIf (GunMod3 = "1" Or GunMod3 = "2" Or GunMod3 = "3" Or GunMod3 = "4") And Color3 = "2" Then
+                            GunMod3 = generator.Next(5, 8)
+                            picMod3.Image = My.Resources.ResourceManager.GetObject("yellow_" & GunMod3.ToString())
+                        End If
+                    End If
+            End Select
+            If Color1 = "2" Or Color2 = "2" Or Color3 = "2" Then
+                HardModeInt = generator.Next(1, 4)
+                If HardModeInt = "1" Then
+                    If Color1 = "2" Then
+                        picMod1.Image = My.Resources.yellow_1
+                    ElseIf Color2 = "2" Then
+                        picMod2.Image = My.Resources.yellow_1
+                    ElseIf Color3 = "2" Then
+                        picMod3.Image = My.Resources.yellow_1
+                    End If
+                End If
+            End If
+
+        End If
+        'Routines for preslotted Gunmods 
+
+PreslotModsAgain:
+
+        Modlistcheck = 0
+        If ModlistP.Count <> 0 Then
+            Modlistcheck += 1
+        End If
+        If ModlistY.Count <> 0 Then
+            Modlistcheck += 1
+        End If
+        If ModlistR.Count <> 0 Then
+            Modlistcheck += 1
+        End If
+        If ModlistB.Count <> 0 Then
+            Modlistcheck += 1
+        End If
+
+        Select Case WeaponCategory
+            Case 0
+                picWeapon.Image = My.Resources.None
+
+                'Assault Rifles
+            Case 1
+                'ACES Rifle Routine
+                If Primary = 2 Then
+                    If Color2 = "3" Or Color3 = "3" Then
+                        If ModlistR.Sum <> 0 Then
+                            Modlistcheck -= 1
+                        End If
+                        If Modlistcheck < 1 Then
+                            picMod2.Image = My.Resources.Empty
+                        Else
+                            Color2 = generator.Next(1, 4)
+                            If Color2 = "1" Then
+                                If ModlistP.Count = 0 Then
+                                    Color2 = 3
+                                    GoTo PreslotModsAgain
+                                Else
+                                    Do
+                                        GunMod2 = generator.Next(1, 6)
+                                    Loop Until ModlistP.Contains(GunMod2)
+                                End If
+                                picMod2.Image = My.Resources.ResourceManager.GetObject("purple_" & GunMod2.ToString())
+                            ElseIf Color2 = "2" Then
+                                If ModlistY.Count = 0 Then
+                                    Color2 = 3
+                                    GoTo PreslotModsAgain
+                                Else
+                                    Do
+                                        GunMod2 = generator.Next(1, 8)
+                                    Loop Until ModlistY.Contains(GunMod2)
+                                End If
+                                picMod2.Image = My.Resources.ResourceManager.GetObject("yellow_" & GunMod2.ToString())
+                            ElseIf Color2 = "3" Then
+                                If ModlistB.Count = 0 Then
+                                    Color2 = 3
+                                    GoTo PreslotModsAgain
+                                Else
+                                    Do
+                                        GunMod2 = generator.Next(1, 10)
+                                    Loop Until ModlistB.Contains(GunMod2)
+                                End If
+                                picMod2.Image = My.Resources.ResourceManager.GetObject("blue_" & GunMod2.ToString())
+                            End If
+                        End If
+                        If Modlistcheck < 2 Then
+                            picMod3.Image = My.Resources.Empty
+                        Else
+                            Do
+                                Color3 = generator.Next(1, 4)
+                            Loop Until Color3 <> Color2
+                            If Color3 = "1" Then
+                                If ModlistP.Count = 0 Then
+                                    Color3 = 3
+                                    GoTo PreslotModsAgain
+                                Else
+                                    Do
+                                        GunMod3 = generator.Next(1, 6)
+                                    Loop Until ModlistP.Contains(GunMod3)
+                                End If
+                                picMod3.Image = My.Resources.ResourceManager.GetObject("purple_" & GunMod3.ToString())
+                            ElseIf Color3 = "2" Then
+                                If ModlistY.Count = 0 Then
+                                    Color3 = 3
+                                    GoTo PreslotModsAgain
+                                Else
+                                    Do
+                                        GunMod3 = generator.Next(1, 8)
+                                    Loop Until ModlistY.Contains(GunMod3)
+                                End If
+                                picMod3.Image = My.Resources.ResourceManager.GetObject("yellow_" & GunMod3.ToString())
+                            ElseIf Color3 = "3" Then
+                                If ModlistB.Count = 0 Then
+                                    Color3 = 3
+                                    GoTo PreslotModsAgain
+                                Else
+                                    Do
+                                        GunMod3 = generator.Next(1, 10)
+                                    Loop Until ModlistB.Contains(GunMod3)
+                                End If
+                                picMod3.Image = My.Resources.ResourceManager.GetObject("blue_" & GunMod3.ToString())
+                            End If
+                        End If
+                    End If
+                    picMod1.Image = My.Resources.extendedBarrel
+                    'Raptor 45 Routine
+                ElseIf Primary = 9 Then
+                    If Color1 = "2" Or Color1 = "3" Or Color1 = "4" Then
+                        picMod2.Image = picMod1.Image
+                    End If
+                    If Color2 = "1" Then
+                        If Modlistcheck < 1 Then
+                            picMod2.Image = My.Resources.Empty
+                        Else
+                            Color2 = generator.Next(1, 4)
+                            If Color2 = "1" Then
+                                If ModlistY.Count = 0 Then
+                                    Color2 = 1
+                                    GoTo PreslotModsAgain
+                                Else
+                                    Do
+                                        GunMod2 = generator.Next(1, 8)
+                                    Loop Until ModlistY.Contains(GunMod2)
+                                End If
+                                picMod2.Image = My.Resources.ResourceManager.GetObject("yellow_" & GunMod2.ToString())
+                            ElseIf Color2 = "2" Then
+                                If ModlistR.Count = 0 Then
+                                    Color2 = 1
+                                    GoTo PreslotModsAgain
+                                Else
+                                    Do
+                                        GunMod2 = generator.Next(1, 11)
+                                    Loop Until ModlistR.Contains(GunMod2)
+                                End If
+                                picMod2.Image = My.Resources.ResourceManager.GetObject("red_" & GunMod2.ToString())
+                            ElseIf Color2 = "3" Then
+                                If ModlistB.Count = 0 Then
+                                    Color2 = 1
+                                    GoTo PreslotModsAgain
+                                Else
+                                    Do
+                                        GunMod2 = generator.Next(1, 10)
+                                    Loop Until ModlistB.Contains(GunMod2)
+                                End If
+                                picMod2.Image = My.Resources.ResourceManager.GetObject("blue_" & GunMod2.ToString())
+                            End If
+                        End If
+                    End If
+                    picMod1.Image = My.Resources.silencerp
+                    picMod3.Image = My.Resources.None
+                    'Star LCR Routine
+                ElseIf Primary = 11 Then
+                    picMod1.Image = My.Resources.yellow_4
+                    picMod2.Image = My.Resources.red_9
+                    picMod3.Image = My.Resources.None
+                End If
+                'LMGs
+            Case 2
+                'AMG Routine
+                If Primary = 7 Then
+                    picMod3.Image = My.Resources.None
+                End If
+                'Rifles
+            Case 3
+                'Tempress Routine
+                If Primary = 6 Then
+                    picMod1.Image = My.Resources.silencerp
+                    picMod2.Image = My.Resources.yellow_4
+                    picMod3.Image = My.Resources.red_9
+                End If
+                'Shotguns
+            Case 4
+                'Shredder Routine
+                If Primary = 3 Then
+                    picMod1.Image = My.Resources.yellow_4
+                    picMod2.Image = My.Resources.purple_4
+                    picMod3.Image = My.Resources.red_9
+                    'CSG Routine
+                ElseIf Primary = 4 Then
+                    picMod1.Image = My.Resources.None
+                    picMod2.Image = My.Resources.None
+                    picMod3.Image = My.Resources.None
+                End If
+                'SMGs
+            Case 5
+                'ACES SMG Routine
+                If Primary = 1 Then
+                    If Color2 = "3" Or Color3 = "3" Then
+                        If ModlistR.Sum <> 0 Then
+                            Modlistcheck -= 1
+                        End If
+                        If Modlistcheck < 1 Then
+                            picMod2.Image = My.Resources.Empty
+                        Else
+                            Color2 = generator.Next(1, 4)
+                            If Color2 = "1" Then
+                                If ModlistP.Count = 0 Then
+                                    Color2 = 3
+                                    GoTo PreslotModsAgain
+                                Else
+                                    Do
+                                        GunMod2 = generator.Next(1, 6)
+                                    Loop Until ModlistP.Contains(GunMod2)
+                                End If
+                                picMod2.Image = My.Resources.ResourceManager.GetObject("purple_" & GunMod2.ToString())
+                            ElseIf Color2 = "2" Then
+                                If ModlistY.Count = 0 Then
+                                    Color2 = 3
+                                    GoTo PreslotModsAgain
+                                Else
+                                    Do
+                                        GunMod2 = generator.Next(1, 8)
+                                    Loop Until ModlistY.Contains(GunMod2)
+                                End If
+                                picMod2.Image = My.Resources.ResourceManager.GetObject("yellow_" & GunMod2.ToString())
+                            ElseIf Color2 = "3" Then
+                                If ModlistB.Count = 0 Then
+                                    Color2 = 3
+                                    GoTo PreslotModsAgain
+                                Else
+                                    Do
+                                        GunMod2 = generator.Next(1, 10)
+                                    Loop Until ModlistB.Contains(GunMod2)
+                                End If
+                                picMod2.Image = My.Resources.ResourceManager.GetObject("blue_" & GunMod2.ToString())
+                            End If
+                        End If
+                        If Modlistcheck < 2 Then
+                            picMod3.Image = My.Resources.Empty
+                        Else
+                            Do
+                                Color3 = generator.Next(1, 4)
+                            Loop Until Color3 <> Color2
+                            If Color3 = "1" Then
+                                If ModlistP.Count = 0 Then
+                                    Color3 = 3
+                                    GoTo PreslotModsAgain
+                                Else
+                                    Do
+                                        GunMod3 = generator.Next(1, 6)
+                                    Loop Until ModlistP.Contains(GunMod3)
+                                End If
+                                picMod3.Image = My.Resources.ResourceManager.GetObject("purple_" & GunMod3.ToString())
+                            ElseIf Color3 = "2" Then
+                                If ModlistY.Count = 0 Then
+                                    Color3 = 3
+                                    GoTo PreslotModsAgain
+                                Else
+                                    Do
+                                        GunMod3 = generator.Next(1, 8)
+                                    Loop Until ModlistY.Contains(GunMod3)
+                                End If
+                                picMod3.Image = My.Resources.ResourceManager.GetObject("yellow_" & GunMod3.ToString())
+                            ElseIf Color3 = "3" Then
+                                If ModlistB.Count = 0 Then
+                                    Color3 = 3
+                                    GoTo PreslotModsAgain
+                                Else
+                                    Do
+                                        GunMod3 = generator.Next(1, 10)
+                                    Loop Until ModlistB.Contains(GunMod3)
+                                End If
+                                picMod3.Image = My.Resources.ResourceManager.GetObject("blue_" & GunMod3.ToString())
+                            End If
+                        End If
+                    End If
+                    picMod1.Image = My.Resources.shortenedBarrel
+                    'Cap40 Routine
+                ElseIf Primary = 3 Then
+                    picMod3.Image = My.Resources.None
+                    'Norseman Routine
+                ElseIf Primary = 6 Then
+                    GunMod1 = generator.Next(1, 5)
+                    Select Case GunMod1
+                        Case 1
+                            If Color2 = "4" Or Color3 = "4" Then
+                                If ModlistB.Sum <> 0 Then
+                                    Modlistcheck -= 1
+                                End If
+                                If Modlistcheck < 1 Then
+                                    picMod2.Image = My.Resources.Empty
+                                Else
+                                    Color2 = generator.Next(1, 4)
+                                    If Color2 = "1" Then
+                                        If ModlistP.Count = 0 Then
+                                            Color2 = 4
+                                            GoTo PreslotModsAgain
+                                        Else
+                                            Do
+                                                GunMod2 = generator.Next(1, 6)
+                                            Loop Until ModlistP.Contains(GunMod2)
+                                        End If
+                                        picMod2.Image = My.Resources.ResourceManager.GetObject("purple_" & GunMod2.ToString())
+                                    ElseIf Color2 = "2" Then
+                                        If ModlistY.Count = 0 Then
+                                            Color2 = 4
+                                            GoTo PreslotModsAgain
+                                        Else
+                                            Do
+                                                GunMod2 = generator.Next(1, 8)
+                                            Loop Until ModlistY.Contains(GunMod2)
+                                        End If
+                                        picMod2.Image = My.Resources.ResourceManager.GetObject("yellow_" & GunMod2.ToString())
+                                    ElseIf Color2 = "3" Then
+                                        If ModlistR.Count = 0 Then
+                                            Color2 = 4
+                                            GoTo PreslotModsAgain
+                                        Else
+                                            Do
+                                                GunMod2 = generator.Next(1, 10)
+                                            Loop Until ModlistR.Contains(GunMod2)
+                                        End If
+                                        picMod2.Image = My.Resources.ResourceManager.GetObject("red_" & GunMod2.ToString())
+                                    End If
+                                End If
+                                If Modlistcheck < 2 Then
+                                    picMod3.Image = My.Resources.Empty
+                                Else
+                                    Do
+                                        Color3 = generator.Next(1, 4)
+                                    Loop Until Color3 <> Color2
+                                    If Color3 = "1" Then
+                                        If ModlistP.Count = 0 Then
+                                            Color3 = 4
+                                            GoTo PreslotModsAgain
+                                        Else
+                                            Do
+                                                GunMod3 = generator.Next(1, 6)
+                                            Loop Until ModlistP.Contains(GunMod3)
+                                        End If
+                                        picMod3.Image = My.Resources.ResourceManager.GetObject("purple_" & GunMod3.ToString())
+                                    ElseIf Color3 = "2" Then
+                                        If ModlistY.Count = 0 Then
+                                            Color3 = 4
+                                            GoTo PreslotModsAgain
+                                        Else
+                                            Do
+                                                GunMod3 = generator.Next(1, 8)
+                                            Loop Until ModlistY.Contains(GunMod3)
+                                        End If
+                                        picMod3.Image = My.Resources.ResourceManager.GetObject("yellow_" & GunMod3.ToString())
+                                    ElseIf Color3 = "3" Then
+                                        If ModlistR.Count = 0 Then
+                                            Color3 = 4
+                                            GoTo PreslotModsAgain
+                                        Else
+                                            Do
+                                                GunMod3 = generator.Next(1, 10)
+                                            Loop Until ModlistR.Contains(GunMod3)
+                                        End If
+                                        picMod3.Image = My.Resources.ResourceManager.GetObject("red_" & GunMod3.ToString())
+                                    End If
+                                End If
+                            End If
+                            picMod1.Image = My.Resources.gunmod_norseman1
+                        Case 2
+                            If Color2 = "3" Or Color3 = "3" Then
+                                If ModlistR.Sum <> 0 Then
+                                    Modlistcheck -= 1
+                                End If
+                                If Modlistcheck < 1 Then
+                                    picMod2.Image = My.Resources.Empty
+                                Else
+                                    Color2 = generator.Next(1, 4)
+                                    If Color2 = "1" Then
+                                        If ModlistP.Count = 0 Then
+                                            Color2 = 3
+                                            GoTo PreslotModsAgain
+                                        Else
+                                            Do
+                                                GunMod2 = generator.Next(1, 6)
+                                            Loop Until ModlistP.Contains(GunMod2)
+                                        End If
+                                        picMod2.Image = My.Resources.ResourceManager.GetObject("purple_" & GunMod2.ToString())
+                                    ElseIf Color2 = "2" Then
+                                        If ModlistY.Count = 0 Then
+                                            Color2 = 3
+                                            GoTo PreslotModsAgain
+                                        Else
+                                            Do
+                                                GunMod2 = generator.Next(1, 8)
+                                            Loop Until ModlistY.Contains(GunMod2)
+                                        End If
+                                        picMod2.Image = My.Resources.ResourceManager.GetObject("yellow_" & GunMod2.ToString())
+                                    ElseIf Color2 = "3" Then
+                                        If ModlistB.Count = 0 Then
+                                            Color2 = 3
+                                            GoTo PreslotModsAgain
+                                        Else
+                                            Do
+                                                GunMod2 = generator.Next(1, 10)
+                                            Loop Until ModlistB.Contains(GunMod2)
+                                        End If
+                                        picMod2.Image = My.Resources.ResourceManager.GetObject("blue_" & GunMod2.ToString())
+                                    End If
+                                End If
+                                If Modlistcheck < 2 Then
+                                    picMod3.Image = My.Resources.Empty
+                                Else
+                                    Do
+                                        Color3 = generator.Next(1, 4)
+                                    Loop Until Color3 <> Color2
+                                    If Color3 = "1" Then
+                                        If ModlistP.Count = 0 Then
+                                            Color3 = 3
+                                            GoTo PreslotModsAgain
+                                        Else
+                                            Do
+                                                GunMod3 = generator.Next(1, 6)
+                                            Loop Until ModlistP.Contains(GunMod3)
+                                        End If
+                                        picMod3.Image = My.Resources.ResourceManager.GetObject("purple_" & GunMod3.ToString())
+                                    ElseIf Color3 = "2" Then
+                                        If ModlistY.Count = 0 Then
+                                            Color3 = 3
+                                            GoTo PreslotModsAgain
+                                        Else
+                                            Do
+                                                GunMod3 = generator.Next(1, 8)
+                                            Loop Until ModlistY.Contains(GunMod3)
+                                        End If
+                                        picMod3.Image = My.Resources.ResourceManager.GetObject("yellow_" & GunMod3.ToString())
+                                    ElseIf Color3 = "3" Then
+                                        If ModlistB.Count = 0 Then
+                                            Color3 = 3
+                                            GoTo PreslotModsAgain
+                                        Else
+                                            Do
+                                                GunMod3 = generator.Next(1, 10)
+                                            Loop Until ModlistB.Contains(GunMod3)
+                                        End If
+                                        picMod3.Image = My.Resources.ResourceManager.GetObject("blue_" & GunMod3.ToString())
+                                    End If
+                                End If
+                            End If
+                            picMod1.Image = My.Resources.gunmod_norseman2
+                        Case 3
+                            If Color2 = "1" Or Color3 = "1" Then
+                                If ModlistP.Sum <> 0 Then
+                                    Modlistcheck -= 1
+                                End If
+                                If Modlistcheck < 1 Then
+                                    picMod2.Image = My.Resources.Empty
+                                Else
+                                    Color2 = generator.Next(1, 4)
+                                    If Color2 = "1" Then
+                                        If ModlistY.Count = 0 Then
+                                            Color2 = 1
+                                            GoTo PreslotModsAgain
+                                        Else
+                                            Do
+                                                GunMod2 = generator.Next(1, 8)
+                                            Loop Until ModlistY.Contains(GunMod2)
+                                        End If
+                                        picMod2.Image = My.Resources.ResourceManager.GetObject("yellow_" & GunMod2.ToString())
+                                    ElseIf Color2 = "2" Then
+                                        If ModlistR.Count = 0 Then
+                                            Color2 = 1
+                                            GoTo PreslotModsAgain
+                                        Else
+                                            Do
+                                                GunMod2 = generator.Next(1, 11)
+                                            Loop Until ModlistR.Contains(GunMod2)
+                                        End If
+                                        picMod2.Image = My.Resources.ResourceManager.GetObject("red_" & GunMod2.ToString())
+                                    ElseIf Color2 = "3" Then
+                                        If ModlistB.Count = 0 Then
+                                            Color2 = 1
+                                            GoTo PreslotModsAgain
+                                        Else
+                                            Do
+                                                GunMod2 = generator.Next(1, 10)
+                                            Loop Until ModlistB.Contains(GunMod2)
+                                        End If
+                                        picMod2.Image = My.Resources.ResourceManager.GetObject("blue_" & GunMod2.ToString())
+                                    End If
+                                End If
+                                If Modlistcheck < 2 Then
+                                    picMod3.Image = My.Resources.Empty
+                                Else
+                                    Do
+                                        Color3 = generator.Next(1, 4)
+                                    Loop Until Color3 <> Color2
+                                    If Color3 = "1" Then
+                                        If ModlistY.Count = 0 Then
+                                            Color3 = 1
+                                            GoTo PreslotModsAgain
+                                        Else
+                                            Do
+                                                GunMod3 = generator.Next(1, 8)
+                                            Loop Until ModlistY.Contains(GunMod3)
+                                        End If
+                                        picMod3.Image = My.Resources.ResourceManager.GetObject("yellow_" & GunMod3.ToString())
+                                    ElseIf Color3 = "2" Then
+                                        If ModlistR.Count = 0 Then
+                                            Color3 = 1
+                                            GoTo PreslotModsAgain
+                                        Else
+                                            Do
+                                                GunMod3 = generator.Next(1, 11)
+                                            Loop Until ModlistR.Contains(GunMod3)
+                                        End If
+                                        picMod3.Image = My.Resources.ResourceManager.GetObject("red_" & GunMod3.ToString())
+                                    ElseIf Color3 = "3" Then
+                                        If ModlistB.Count = 0 Then
+                                            Color3 = 1
+                                            GoTo PreslotModsAgain
+                                        Else
+                                            Do
+                                                GunMod3 = generator.Next(1, 10)
+                                            Loop Until ModlistB.Contains(GunMod3)
+                                        End If
+                                        picMod3.Image = My.Resources.ResourceManager.GetObject("blue_" & GunMod3.ToString())
+                                    End If
+                                End If
+                            End If
+                            picMod1.Image = My.Resources.gunmod_norseman3
+                        Case Else
+                            picMod1.Image = My.Resources.gunmod_odin1
+                            picMod2.Image = My.Resources.gunmod_odin2
+                            picMod3.Image = My.Resources.gunmod_odin3
+                    End Select
+                    'Whisper Routine
+                ElseIf Primary = 8 Then
+                    picMod1.Image = My.Resources.silencer
+                    picMod2.Image = My.Resources.None
+                    picMod3.Image = My.Resources.None
+                    'VAS-C2 Routine
+                ElseIf Primary = 10 Then
+                    picMod1.Image = My.Resources.silencer
+                    picMod2.Image = My.Resources.yellow_4
+                    picMod3.Image = My.Resources.None
+                End If
+                'Snipers
+            Case 6
+                'DogEar Exception Routine
+                If Primary = 3 Then
+                    If Color1 = "1" Or Color1 = "2" Or Color1 = "4" Then
+                        picMod2.Image = picMod1.Image
+                    End If
+                    If Color2 = "3" Then
+                        If Modlistcheck < 1 Then
+                            picMod2.Image = My.Resources.Empty
+                        Else
+                            Color2 = generator.Next(1, 4)
+                            If Color2 = "1" Then
+                                If ModlistP.Count = 0 Then
+                                    Color2 = 3
+                                    GoTo PreslotModsAgain
+                                Else
+                                    Do
+                                        GunMod2 = generator.Next(1, 6)
+                                    Loop Until ModlistP.Contains(GunMod2)
+                                End If
+                                picMod2.Image = My.Resources.ResourceManager.GetObject("purple_" & GunMod2.ToString())
+                            ElseIf Color2 = "2" Then
+                                If ModlistY.Count = 0 Then
+                                    Color2 = 3
+                                    GoTo PreslotModsAgain
+                                Else
+                                    Do
+                                        GunMod2 = generator.Next(1, 8)
+                                    Loop Until ModlistY.Contains(GunMod2)
+                                End If
+                                picMod2.Image = My.Resources.ResourceManager.GetObject("yellow_" & GunMod2.ToString())
+                            ElseIf Color2 = "3" Then
+                                If ModlistB.Count = 0 Then
+                                    Color2 = 3
+                                    GoTo PreslotModsAgain
+                                Else
+                                    Do
+                                        GunMod2 = generator.Next(1, 10)
+                                    Loop Until ModlistB.Contains(GunMod2)
+                                End If
+                                picMod2.Image = My.Resources.ResourceManager.GetObject("blue_" & GunMod2.ToString())
+                            End If
+                        End If
+                    End If
+                    picMod1.Image = My.Resources.silencer
+                    picMod3.Image = My.Resources.None
+                    'Scout Routine
+                ElseIf Primary = 4 Then
+                    picMod1.Image = My.Resources.None
+                    picMod2.Image = My.Resources.None
+                    picMod3.Image = My.Resources.None
+                End If
+                'Legendaries
+            Case 7
+                Select Case Primary
+                    Case 1 'Sitting Duck
+                        If Color1 = "2" Or Color1 = "3" Or Color1 = "4" Then
+                            picMod2.Image = picMod1.Image
+                        End If
+                        If Color2 = "1" Then
+                            If Modlistcheck < 1 Then
+                                picMod2.Image = My.Resources.Empty
+                            Else
+                                Color2 = generator.Next(1, 4)
+                                If Color2 = "1" Then
+                                    If ModlistY.Count = 0 Then
+                                        Color2 = 1
+                                        GoTo PreslotModsAgain
+                                    Else
+                                        Do
+                                            GunMod2 = generator.Next(1, 8)
+                                        Loop Until ModlistY.Contains(GunMod2)
+                                    End If
+                                    picMod2.Image = My.Resources.ResourceManager.GetObject("yellow_" & GunMod2.ToString())
+                                ElseIf Color2 = "2" Then
+                                    If ModlistR.Count = 0 Then
+                                        Color2 = 1
+                                        GoTo PreslotModsAgain
+                                    Else
+                                        Do
+                                            GunMod2 = generator.Next(1, 11)
+                                        Loop Until ModlistR.Contains(GunMod2)
+                                    End If
+                                    picMod2.Image = My.Resources.ResourceManager.GetObject("red_" & GunMod2.ToString())
+                                ElseIf Color2 = "3" Then
+                                    If ModlistB.Count = 0 Then
+                                        Color2 = 1
+                                        GoTo PreslotModsAgain
+                                    Else
+                                        Do
+                                            GunMod2 = generator.Next(1, 10)
+                                        Loop Until ModlistB.Contains(GunMod2)
+                                    End If
+                                    picMod2.Image = My.Resources.ResourceManager.GetObject("blue_" & GunMod2.ToString())
+                                End If
+                            End If
+                        End If
+                        picMod1.Image = My.Resources.ml_1
+                        picMod3.Image = My.Resources.None
+                    Case 2 'Reaper
+                        If Color1 = "2" Or Color1 = "4" Then
+                            picMod3.Image = picMod1.Image
+                        ElseIf Color2 = "2" Or Color2 = "4" Then
+                            picMod3.Image = picMod2.Image
+                        End If
+                        If Color3 = "1" Or Color3 = "3" Then
+                            If Modlistcheck < 1 Then
+                                picMod3.Image = My.Resources.Empty
+                            Else
+                                Color3 = generator.Next(1, 3)
+                                If Color3 = "1" Then
+                                    If ModlistY.Count = 0 Then
+                                        Color3 = 1
+                                        GoTo PreslotModsAgain
+                                    Else
+                                        Do
+                                            GunMod3 = generator.Next(1, 8)
+                                        Loop Until ModlistY.Contains(GunMod3)
+                                    End If
+                                    picMod3.Image = My.Resources.ResourceManager.GetObject("yellow_" & GunMod3.ToString())
+                                ElseIf Color3 = "2" Then
+                                    If ModlistB.Count = 0 Then
+                                        Color3 = 1
+                                        GoTo PreslotModsAgain
+                                    Else
+                                        Do
+                                            GunMod3 = generator.Next(1, 10)
+                                        Loop Until ModlistB.Contains(GunMod3)
+                                    End If
+                                    picMod3.Image = My.Resources.ResourceManager.GetObject("blue_" & GunMod3.ToString())
+                                End If
+                            End If
+                        End If
+                        picMod1.Image = My.Resources.silencer
+                        picMod2.Image = My.Resources.ml_2
+                    Case 3 'Anubis
+                        If Color1 = "1" Or Color1 = "3" Or Color1 = "4" Then
+                            picMod2.Image = picMod1.Image
+                        End If
+                        If Color2 = "2" Then
+                            If Modlistcheck < 1 Then
+                                picMod2.Image = My.Resources.Empty
+                            Else
+                                Color2 = generator.Next(1, 4)
+                                If Color2 = "1" Then
+                                    If ModlistP.Count = 0 Then
+                                        Color2 = 2
+                                        GoTo PreslotModsAgain
+                                    Else
+                                        Do
+                                            GunMod2 = generator.Next(1, 6)
+                                        Loop Until ModlistP.Contains(GunMod2)
+                                    End If
+                                    picMod2.Image = My.Resources.ResourceManager.GetObject("purple_" & GunMod2.ToString())
+                                ElseIf Color2 = "2" Then
+                                    If ModlistR.Count = 0 Then
+                                        Color2 = 2
+                                        GoTo PreslotModsAgain
+                                    Else
+                                        Do
+                                            GunMod2 = generator.Next(1, 11)
+                                        Loop Until ModlistR.Contains(GunMod2)
+                                    End If
+                                    picMod2.Image = My.Resources.ResourceManager.GetObject("red_" & GunMod2.ToString())
+                                ElseIf Color2 = "3" Then
+                                    If ModlistB.Count = 0 Then
+                                        Color2 = 2
+                                        GoTo PreslotModsAgain
+                                    Else
+                                        Do
+                                            GunMod2 = generator.Next(1, 10)
+                                        Loop Until ModlistB.Contains(GunMod2)
+                                    End If
+                                    picMod2.Image = My.Resources.ResourceManager.GetObject("blue_" & GunMod2.ToString())
+                                End If
+                            End If
+                        End If
+                        picMod1.Image = My.Resources.ml_3
+                        picMod3.Image = My.Resources.None
+                    Case 4 'True Ogre
+                        If Color1 = "1" Or Color1 = "2" Or Color1 = "3" Then
+                            picMod2.Image = picMod1.Image
+                        End If
+                        If Color2 = "4" Then
+                            If Modlistcheck < 1 Then
+                                picMod2.Image = My.Resources.Empty
+                            Else
+                                Color2 = generator.Next(1, 4)
+                                If Color2 = "1" Then
+                                    If ModlistP.Count = 0 Then
+                                        Color2 = 4
+                                        GoTo PreslotModsAgain
+                                    Else
+                                        Do
+                                            GunMod2 = generator.Next(1, 6)
+                                        Loop Until ModlistP.Contains(GunMod2)
+                                    End If
+                                    picMod2.Image = My.Resources.ResourceManager.GetObject("purple_" & GunMod2.ToString())
+                                ElseIf Color2 = "2" Then
+                                    If ModlistY.Count = 0 Then
+                                        Color2 = 4
+                                        GoTo PreslotModsAgain
+                                    Else
+                                        Do
+                                            GunMod2 = generator.Next(1, 8)
+                                        Loop Until ModlistY.Contains(GunMod2)
+                                    End If
+                                    picMod2.Image = My.Resources.ResourceManager.GetObject("yellow_" & GunMod2.ToString())
+                                ElseIf Color2 = "3" Then
+                                    If ModlistR.Count = 0 Then
+                                        Color2 = 4
+                                        GoTo PreslotModsAgain
+                                    Else
+                                        Do
+                                            GunMod2 = generator.Next(1, 11)
+                                        Loop Until ModlistR.Contains(GunMod2)
+                                    End If
+                                    picMod2.Image = My.Resources.ResourceManager.GetObject("red_" & GunMod2.ToString())
+                                End If
+                            End If
+                        End If
+                        picMod1.Image = My.Resources.ml_4
+                        picMod3.Image = My.Resources.None
+                    Case 5 'Bullshark
+                        If Color1 = "1" Or Color1 = "2" Then
+                            picMod3.Image = picMod1.Image
+                        ElseIf Color2 = "1" Or Color2 = "2" Then
+                            picMod3.Image = picMod2.Image
+                        End If
+                        If Color3 = "3" Or Color3 = "4" Then
+                            If Modlistcheck < 1 Then
+                                picMod3.Image = My.Resources.Empty
+                            Else
+                                Color3 = generator.Next(1, 3)
+                                If Color3 = "1" Then
+                                    If ModlistP.Count = 0 Then
+                                        Color3 = 3
+                                        GoTo PreslotModsAgain
+                                    Else
+                                        Do
+                                            GunMod3 = generator.Next(1, 6)
+                                        Loop Until ModlistP.Contains(GunMod3)
+                                    End If
+                                    picMod3.Image = My.Resources.ResourceManager.GetObject("purple_" & GunMod3.ToString())
+                                ElseIf Color3 = "2" Then
+                                    If ModlistY.Count = 0 Then
+                                        Color3 = 3
+                                        GoTo PreslotModsAgain
+                                    Else
+                                        Do
+                                            GunMod3 = generator.Next(1, 8)
+                                        Loop Until ModlistY.Contains(GunMod3)
+                                    End If
+                                    picMod3.Image = My.Resources.ResourceManager.GetObject("yellow_" & GunMod3.ToString())
+                                End If
+                            End If
+                        End If
+                        picMod1.Image = My.Resources.ml_5
+                        picMod2.Image = My.Resources.ml_6
+                    Case 6 'Ursus
+                        If Color1 = "1" Or Color1 = "3" Or Color1 = "4" Then
+                            picMod2.Image = picMod1.Image
+                        End If
+                        If Color2 = "2" Then
+                            If Modlistcheck < 1 Then
+                                picMod2.Image = My.Resources.Empty
+                            Else
+                                Color2 = generator.Next(1, 4)
+                                If Color2 = "1" Then
+                                    If ModlistP.Count = 0 Then
+                                        Color2 = 2
+                                        GoTo PreslotModsAgain
+                                    Else
+                                        Do
+                                            GunMod2 = generator.Next(1, 6)
+                                        Loop Until ModlistP.Contains(GunMod2)
+                                    End If
+                                    picMod2.Image = My.Resources.ResourceManager.GetObject("purple_" & GunMod2.ToString())
+                                ElseIf Color2 = "2" Then
+                                    If ModlistR.Count = 0 Then
+                                        Color2 = 2
+                                        GoTo PreslotModsAgain
+                                    Else
+                                        Do
+                                            GunMod2 = generator.Next(1, 11)
+                                        Loop Until ModlistR.Contains(GunMod2)
+                                    End If
+                                    picMod2.Image = My.Resources.ResourceManager.GetObject("red_" & GunMod2.ToString())
+                                ElseIf Color2 = "3" Then
+                                    If ModlistB.Count = 0 Then
+                                        Color2 = 2
+                                        GoTo PreslotModsAgain
+                                    Else
+                                        Do
+                                            GunMod2 = generator.Next(1, 10)
+                                        Loop Until ModlistB.Contains(GunMod2)
+                                    End If
+                                    picMod2.Image = My.Resources.ResourceManager.GetObject("blue_" & GunMod2.ToString())
+                                End If
+                            End If
+                        End If
+                        picMod1.Image = My.Resources.ml_7
+                        picMod3.Image = My.Resources.None
+                    Case 7 'Huntress
+                        If Color1 = "1" Or Color1 = "2" Or Color1 = "3" Then
+                            picMod2.Image = picMod1.Image
+                        End If
+                        If Color2 = "4" Then
+                            If Modlistcheck < 1 Then
+                                picMod2.Image = My.Resources.Empty
+                            Else
+                                Color2 = generator.Next(1, 4)
+                                If Color2 = "1" Then
+                                    If ModlistP.Count = 0 Then
+                                        Color2 = 4
+                                        GoTo PreslotModsAgain
+                                    Else
+                                        Do
+                                            GunMod2 = generator.Next(1, 6)
+                                        Loop Until ModlistP.Contains(GunMod2)
+                                    End If
+                                    picMod2.Image = My.Resources.ResourceManager.GetObject("purple_" & GunMod2.ToString())
+                                ElseIf Color2 = "2" Then
+                                    If ModlistY.Count = 0 Then
+                                        Color2 = 4
+                                        GoTo PreslotModsAgain
+                                    Else
+                                        Do
+                                            GunMod2 = generator.Next(1, 8)
+                                        Loop Until ModlistY.Contains(GunMod2)
+                                    End If
+                                    picMod2.Image = My.Resources.ResourceManager.GetObject("yellow_" & GunMod2.ToString())
+                                ElseIf Color2 = "3" Then
+                                    If ModlistR.Count = 0 Then
+                                        Color2 = 4
+                                        GoTo PreslotModsAgain
+                                    Else
+                                        Do
+                                            GunMod2 = generator.Next(1, 11)
+                                        Loop Until ModlistR.Contains(GunMod2)
+                                    End If
+                                    picMod2.Image = My.Resources.ResourceManager.GetObject("red_" & GunMod2.ToString())
+                                End If
+                            End If
+                        End If
+                        picMod1.Image = My.Resources.ml_8
+                        picMod3.Image = My.Resources.None
+                    Case 8 'Thumper
+                        If Color1 = "1" Or Color1 = "2" Or Color1 = "4" Then
+                            picMod2.Image = picMod1.Image
+                        End If
+                        If Color2 = "3" Then
+                            If Modlistcheck < 1 Then
+                                picMod2.Image = My.Resources.Empty
+                            Else
+                                Color2 = generator.Next(1, 4)
+                                If Color2 = "1" Then
+                                    If ModlistP.Count = 0 Then
+                                        Color2 = 3
+                                        GoTo PreslotModsAgain
+                                    Else
+                                        Do
+                                            GunMod2 = generator.Next(1, 6)
+                                        Loop Until ModlistP.Contains(GunMod2)
+                                    End If
+                                    picMod2.Image = My.Resources.ResourceManager.GetObject("purple_" & GunMod2.ToString())
+                                ElseIf Color2 = "2" Then
+                                    If ModlistY.Count = 0 Then
+                                        Color2 = 3
+                                        GoTo PreslotModsAgain
+                                    Else
+                                        Do
+                                            GunMod2 = generator.Next(1, 8)
+                                        Loop Until ModlistY.Contains(GunMod2)
+                                    End If
+                                    picMod2.Image = My.Resources.ResourceManager.GetObject("yellow_" & GunMod2.ToString())
+                                ElseIf Color2 = "3" Then
+                                    If ModlistB.Count = 0 Then
+                                        Color2 = 3
+                                        GoTo PreslotModsAgain
+                                    Else
+                                        Do
+                                            GunMod2 = generator.Next(1, 10)
+                                        Loop Until ModlistB.Contains(GunMod2)
+                                    End If
+                                    picMod2.Image = My.Resources.ResourceManager.GetObject("blue_" & GunMod2.ToString())
+                                End If
+                            End If
+                        End If
+                        picMod1.Image = My.Resources.ml_9
+                        picMod3.Image = My.Resources.None
+                    Case Else
+                End Select
+            Case 8
+
+                'AAEPD and EOL
+
+            Case Else
+                MsgBox("Damn son, you have an error right here. Please let Hollowchick know his program is going haywire for no fucking reason.", , "Critical Error.")
+        End Select
+        ModlistP.Clear()
+        ModlistY.Clear()
+        ModlistR.Clear()
+        ModlistB.Clear()
+        Modlistcheck = 0
+    End Sub
+
+    'Click Events
+
+    Private Sub picWeapon_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picWeapon.Click
+        If StatWeapon = False Then
+            StatWeapon = True
+            picWeapon.BackgroundImage = My.Resources.Background_ModBorderSelected
+            picWeapon.Image = My.Resources.Empty
+        ElseIf StatWeapon = True Then
+            StatWeapon = False
+            picWeapon.BackgroundImage = My.Resources.Background_ModBorder
+            picWeapon.Image = My.Resources.None
+        End If
+    End Sub
+
+    Private Sub picMod1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picMod1.Click
+        If StatMod1 = False Then
+            StatMod1 = True
+            picMod1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            picMod1.Image = My.Resources.Empty
+        ElseIf StatMod1 = True Then
+            StatMod1 = False
+            picMod1.BackgroundImage = My.Resources.Background_ModBorderThick
+            picMod1.Image = My.Resources.None
+        End If
+    End Sub
+
+    Private Sub picMod2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picMod2.Click
+        If StatMod2 = False Then
+            StatMod2 = True
+            picMod2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            picMod2.Image = My.Resources.Empty
+        ElseIf StatMod2 = True Then
+            StatMod2 = False
+            picMod2.BackgroundImage = My.Resources.Background_ModBorderThick
+            picMod2.Image = My.Resources.None
+        End If
+    End Sub
+
+    Private Sub picMod3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picMod3.Click
+        If StatMod3 = False Then
+            StatMod3 = True
+            picMod3.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            picMod3.Image = My.Resources.Empty
+        ElseIf StatMod3 = True Then
+            StatMod3 = False
+            picMod3.BackgroundImage = My.Resources.Background_ModBorderThick
+            picMod3.Image = My.Resources.None
+        End If
+    End Sub
+
+    Private Sub picCharModGreen_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picCharModGreen.Click
+        If StatCharGreen = False Then
+            StatCharGreen = True
+            picCharModGreen.BackgroundImage = My.Resources.Background_ModBorderSelected
+            picCharModGreen.Image = My.Resources.Empty
+        ElseIf StatCharGreen = True Then
+            StatCharGreen = False
+            picCharModGreen.BackgroundImage = My.Resources.Background_ModBorder
+            picCharModGreen.Image = My.Resources.None
+        End If
+    End Sub
+
+    Private Sub picCharModBlue_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picCharModBlue.Click
+        If StatCharBlue = False Then
+            StatCharBlue = True
+            picCharModBlue.BackgroundImage = My.Resources.Background_ModBorderSelected
+            picCharModBlue.Image = My.Resources.Empty
+        ElseIf StatCharBlue = True Then
+            StatCharBlue = False
+            picCharModBlue.BackgroundImage = My.Resources.Background_ModBorder
+            picCharModBlue.Image = My.Resources.None
+        End If
+    End Sub
+
+    Private Sub picSecondary_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picSecondary.Click
+        If StatSec = False Then
+            StatSec = True
+            picSecondary.BackgroundImage = My.Resources.Background_ModBorderSelected
+            picSecondary.Image = My.Resources.Empty
+        ElseIf StatSec = True Then
+            StatSec = False
+            picSecondary.BackgroundImage = My.Resources.Background_ModBorder
+            picSecondary.Image = My.Resources.None
+        End If
+    End Sub
+
+    Private Sub picNade_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picNade.Click
+        If StatNade = False Then
+            StatNade = True
+            picNade.BackgroundImage = My.Resources.Background_ModBorderSelected
+            picNade.Image = My.Resources.Empty
+        ElseIf StatNade = True Then
+            StatNade = False
+            picNade.BackgroundImage = My.Resources.Background_ModBorder
+            picNade.Image = My.Resources.None
+        End If
+    End Sub
+
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+        Form2.Show()
+    End Sub
+    'Strip Menus
+
+    Private Sub IFoundABugToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles IFoundABugToolStripMenuItem.Click
+        'MsgBox("It's great you wanna help me improve the program! Please screenshot what happened and I will try my best to fix it! Feel free to send it to me on the forums, my name there is 'Hollowchick'.", , ("I found a bug"))
+    End Sub
+
+    Private Sub TestToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TestToolStripMenuItem1.Click
+        Form2.Show()
+    End Sub
+
+    Private Sub SavedLoadoutsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SavedLoadoutsToolStripMenuItem.Click
+        'Form3.Show()
+    End Sub
+
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
+        'Form4.Show()
+    End Sub
+End Class
