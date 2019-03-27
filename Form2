@@ -1,0 +1,2312 @@
+Public Class Form2
+    Private Sub Form2_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        My.Settings.Reload()
+        'Purple Borders Load
+        If My.Settings.ModsP1 = 1 Then
+            picModP1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picModP1.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.ModsP2 = 1 Then
+            picModP2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picModP2.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.ModsP3 = 1 Then
+            picModP3.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picModP3.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.ModsP4 = 1 Then
+            picModP4.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picModP4.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.ModsP5 = 1 Then
+            picModP5.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picModP5.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        'Yellow Borders Load
+        If My.Settings.ModsY1 = 1 Then
+            picModY1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picModY1.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.ModsY2 = 1 Then
+            picModY2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picModY2.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.ModsY3 = 1 Then
+            picModY3.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picModY3.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.ModsY4 = 1 Then
+            picModY4.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picModY4.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.ModsY5 = 1 Then
+            picModY5.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picModY5.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.ModsY6 = 1 Then
+            picModY6.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picModY6.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.ModsY7 = 1 Then
+            picModY7.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picModY7.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        'Red Borders Load
+        If My.Settings.ModsR1 = 1 Then
+            picModR1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picModR1.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.ModsR2 = 1 Then
+            picModR2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picModR2.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.ModsR3 = 1 Then
+            picModR3.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picModR3.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.ModsR4 = 1 Then
+            picModR4.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picModR4.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.ModsR5 = 1 Then
+            picModR5.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picModR5.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.ModsR6 = 1 Then
+            picModR6.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picModR6.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.ModsR7 = 1 Then
+            picModR7.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picModR7.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.ModsR8 = 1 Then
+            picModR8.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picModR8.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.ModsR9 = 1 Then
+            picModR9.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picModR9.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.ModsR10 = 1 Then
+            picModR10.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picModR10.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        'Blue Borders Load
+        If My.Settings.ModsB1 = 1 Then
+            picModB1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picModB1.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.ModsB2 = 1 Then
+            picModB2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picModB2.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.ModsB3 = 1 Then
+            picModB3.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picModB3.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.ModsB4 = 1 Then
+            picModB4.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picModB4.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.ModsB5 = 1 Then
+            picModB5.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picModB5.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.ModsB6 = 1 Then
+            picModB6.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picModB6.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.ModsB7 = 1 Then
+            picModB7.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picModB7.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.ModsB8 = 1 Then
+            picModB8.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picModB8.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.ModsB9 = 1 Then
+            picModB9.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picModB9.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        'Weapon Borders Load
+
+        'Assault Rifles
+        If My.Settings.WeapAss1 = 1 Then
+            picAss1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picAss1.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapAss2 = 1 Then
+            picAss2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picAss2.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapAss3 = 1 Then
+            picAss3.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picAss3.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapAss4 = 1 Then
+            picAss4.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picAss4.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapAss5 = 1 Then
+            picAss5.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picAss5.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapAss6 = 1 Then
+            picAss6.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picAss6.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapAss7 = 1 Then
+            picAss7.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picAss7.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapAss8 = 1 Then
+            picAss8.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picAss8.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapAss9 = 1 Then
+            picAss9.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picAss9.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapAss10 = 1 Then
+            picAss10.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picAss10.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapAss11 = 1 Then
+            picAss11.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picAss11.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        'LMGs
+        If My.Settings.WeapLMG1 = 1 Then
+            picLMG1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picLMG1.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapLMG2 = 1 Then
+            picLMG2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picLMG2.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapLMG3 = 1 Then
+            picLMG3.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picLMG3.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapLMG4 = 1 Then
+            picLMG4.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picLMG4.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapLMG5 = 1 Then
+            picLMG5.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picLMG5.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapLMG6 = 1 Then
+            picLMG6.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picLMG6.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapLMG7 = 1 Then
+            picLMG7.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picLMG7.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        'Rifles
+        If My.Settings.WeapRifle1 = 1 Then
+            picRifle1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picRifle1.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapRifle2 = 1 Then
+            picRifle2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picRifle2.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapRifle3 = 1 Then
+            picRifle3.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picRifle3.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapRifle4 = 1 Then
+            picRifle4.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picRifle4.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapRifle5 = 1 Then
+            picRifle5.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picRifle5.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapRifle6 = 1 Then
+            picRifle6.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picRifle6.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        'Shotguns
+        If My.Settings.WeapShot1 = 1 Then
+            picShot1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picShot1.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapShot2 = 1 Then
+            picShot2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picShot2.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapShot3 = 1 Then
+            picShot3.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picShot3.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapShot4 = 1 Then
+            picShot4.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picShot4.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapShot5 = 1 Then
+            picShot5.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picShot5.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        'SMGs
+        If My.Settings.WeapSMG1 = 1 Then
+            picSMG1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picSMG1.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapSMG2 = 1 Then
+            picSMG2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picSMG2.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapSMG3 = 1 Then
+            picSMG3.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picSMG3.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapSMG4 = 1 Then
+            picSMG4.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picSMG4.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapSMG5 = 1 Then
+            picSMG5.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picSMG5.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapSMG6 = 1 Then
+            picSMG6.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picSMG6.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapSMG7 = 1 Then
+            picSMG7.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picSMG7.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapSMG8 = 1 Then
+            picSMG8.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picSMG8.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapSMG9 = 1 Then
+            picSMG9.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picSMG9.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapSMG10 = 1 Then
+            picSMG10.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picSMG10.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        'Snipers
+        If My.Settings.WeapSniper1 = 1 Then
+            picSniper1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picSniper1.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapSniper2 = 1 Then
+            picSniper2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picSniper2.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapSniper3 = 1 Then
+            picSniper3.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picSniper3.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapSniper4 = 1 Then
+            picSniper4.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picSniper4.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapSniper5 = 1 Then
+            picSniper5.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picSniper5.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        'Legendaries
+        If My.Settings.WeapLegPrim1 = 1 Then
+            picLegPrim1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picLegPrim1.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapLegPrim2 = 1 Then
+            picLegPrim2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picLegPrim2.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapLegPrim3 = 1 Then
+            picLegPrim3.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picLegPrim3.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapLegSec1 = 1 Then
+            picLegSec1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picLegSec1.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapLegPrim4 = 1 Then
+            picLegPrim4.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picLegPrim4.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapLegPrim5 = 1 Then
+            picLegPrim5.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picLegPrim5.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapLegPrim6 = 1 Then
+            picLegPrim6.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picLegPrim6.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapLegSec2 = 1 Then
+            picLegSec2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picLegSec2.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapLegPrim7 = 1 Then
+            picLegPrim7.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picLegPrim7.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapLegPrim8 = 1 Then
+            picLegPrim8.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picLegPrim8.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapLegSec3 = 1 Then
+            picLegSec3.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picLegSec3.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapLegPrim9 = 1 Then
+            picLegPrim9.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picLegPrim9.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapLegSec4 = 1 Then
+            picLegSec4.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picLegSec4.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.Sec13 = 1 Then
+            picSecondary13.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picSecondary13.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapLegSec5 = 1 Then
+            picLegSec5.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picLegSec5.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        'Explosive
+        If My.Settings.WeapEx1 = 1 Then
+            picEx1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picEx1.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.WeapEx2 = 1 Then
+            picEx2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picEx2.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+
+        'Secondary Borders Load
+        If My.Settings.Sec1 = 1 Then
+            picSecondary1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picSecondary1.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.Sec2 = 1 Then
+            picSecondary2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picSecondary2.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.Sec3 = 1 Then
+            picSecondary3.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picSecondary3.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.Sec4 = 1 Then
+            picSecondary4.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picSecondary4.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.Sec5 = 1 Then
+            picSecondary5.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picSecondary5.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.Sec6 = 1 Then
+            picSecondary6.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picSecondary6.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.Sec7 = 1 Then
+            picSecondary7.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picSecondary7.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.Sec8 = 1 Then
+            picSecondary8.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picSecondary8.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.Sec9 = 1 Then
+            picSecondary9.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picSecondary9.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.Sec10 = 1 Then
+            picSecondary10.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picSecondary10.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.Sec11 = 1 Then
+            picSecondary11.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picSecondary11.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.Sec12 = 1 Then
+            picSecondary12.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picSecondary12.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        'Nade Borders Load
+        If My.Settings.Nade1 = 1 Then
+            picNade1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picNade1.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.Nade2 = 1 Then
+            picNade2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picNade2.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.Nade3 = 1 Then
+            picNade3.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picNade3.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.Nade4 = 1 Then
+            picNade4.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picNade4.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.Nade5 = 1 Then
+            picNade5.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picNade5.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.Nade6 = 1 Then
+            picNade6.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picNade6.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.Nade7 = 1 Then
+            picNade7.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picNade7.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        'Charmods Green Borders Load
+        If My.Settings.CharGreen1 = 1 Then
+            picCharGreen1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picCharGreen1.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.CharGreen2 = 1 Then
+            picCharGreen2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picCharGreen2.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.CharGreen3 = 1 Then
+            picCharGreen3.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picCharGreen3.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.CharGreen4 = 1 Then
+            picCharGreen4.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picCharGreen4.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.CharGreen5 = 1 Then
+            picCharGreen5.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picCharGreen5.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.CharGreen6 = 1 Then
+            picCharGreen6.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picCharGreen6.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.CharGreen7 = 1 Then
+            picCharGreen7.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picCharGreen7.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.CharGreen8 = 1 Then
+            picCharGreen8.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picCharGreen8.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        'Charmods Blue Borders Load
+        If My.Settings.CharBlue1 = 1 Then
+            picCharBlue1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picCharBlue1.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.CharBlue2 = 1 Then
+            picCharBlue2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picCharBlue2.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.CharBlue3 = 1 Then
+            picCharBlue3.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picCharBlue3.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.CharBlue4 = 1 Then
+            picCharBlue4.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picCharBlue4.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.CharBlue5 = 1 Then
+            picCharBlue5.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picCharBlue5.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        If My.Settings.CharBlue6 = 1 Then
+            picCharBlue6.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+        Else : picCharBlue6.BackgroundImage = My.Resources.Background_ModBorderThick
+        End If
+        'Empty Mods Load
+        If My.Settings.EmptyMods = 1 Then
+            picEmptyMods.Image = My.Resources.emptymodsselected
+        Else : picEmptyMods.Image = My.Resources.emptymods
+        End If
+        'Challenges Load
+        If My.Settings.Challenges = 1 Then
+            picChallenges.Image = My.Resources.challengesselected
+        Else : picChallenges.Image = My.Resources.challenges
+        End If
+        'Hard Mode Load
+        If My.Settings.HardMode = 1 Then
+            picHardMode.Image = My.Resources.hardmodeselected
+        Else : picHardMode.Image = My.Resources.hardmode
+        End If
+    End Sub
+    ' Purple Mod Picture Change
+
+    Private Sub picModP1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picModP1.Click
+        My.Settings.Reload()
+        If My.Settings.ModsP1 = 0 Then
+            picModP1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.ModsP1 = 1
+        Else
+            picModP1.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.ModsP1 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picModP2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picModP2.Click
+        My.Settings.Reload()
+        If My.Settings.ModsP2 = 0 Then
+            picModP2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.ModsP2 = 1
+        Else
+            picModP2.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.ModsP2 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picModP3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picModP3.Click
+        My.Settings.Reload()
+        If My.Settings.ModsP3 = 0 Then
+            picModP3.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.ModsP3 = 1
+        Else
+            picModP3.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.ModsP3 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picModP4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picModP4.Click
+        My.Settings.Reload()
+        If My.Settings.ModsP4 = 0 Then
+            picModP4.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.ModsP4 = 1
+        Else
+            picModP4.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.ModsP4 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picModP5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picModP5.Click
+        My.Settings.Reload()
+        If My.Settings.ModsP5 = 0 Then
+            picModP5.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.ModsP5 = 1
+        Else
+            picModP5.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.ModsP5 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub TabPage1_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TabPage1.MouseMove
+        My.Settings.Reload()
+        If My.Settings.ModsP1 = 0 And My.Settings.ModsP2 = 0 And My.Settings.ModsP3 = 0 And My.Settings.ModsP4 = 0 And My.Settings.ModsP5 = 0 Then
+            My.Settings.ModsPNo = 1
+        Else : My.Settings.ModsPNo = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    'Yellow Mod Picture Change
+
+    Private Sub picModY1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picModY1.Click
+        My.Settings.Reload()
+        If My.Settings.ModsY1 = 0 Then
+            picModY1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.ModsY1 = 1
+        Else
+            picModY1.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.ModsY1 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picModY2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picModY2.Click
+        My.Settings.Reload()
+        If My.Settings.ModsY2 = 0 Then
+            picModY2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.ModsY2 = 1
+        Else
+            picModY2.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.ModsY2 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picModY3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picModY3.Click
+        My.Settings.Reload()
+        If My.Settings.ModsY3 = 0 Then
+            picModY3.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.ModsY3 = 1
+        Else
+            picModY3.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.ModsY3 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picModY4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picModY4.Click
+        My.Settings.Reload()
+        If My.Settings.ModsY4 = 0 Then
+            picModY4.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.ModsY4 = 1
+        Else
+            picModY4.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.ModsY4 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picModY5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picModY5.Click
+        My.Settings.Reload()
+        If My.Settings.ModsY5 = 0 Then
+            picModY5.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.ModsY5 = 1
+        Else
+            picModY5.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.ModsY5 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picModY6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picModY6.Click
+        My.Settings.Reload()
+        If My.Settings.ModsY6 = 0 Then
+            picModY6.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.ModsY6 = 1
+        Else
+            picModY6.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.ModsY6 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picModY7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picModY7.Click
+        My.Settings.Reload()
+        If My.Settings.ModsY7 = 0 Then
+            picModY7.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.ModsY7 = 1
+        Else
+            picModY7.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.ModsY7 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub TabPage2_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TabPage2.MouseMove
+        My.Settings.Reload()
+        If My.Settings.ModsY1 = 0 And My.Settings.ModsY2 = 0 And My.Settings.ModsY3 = 0 And My.Settings.ModsY4 = 0 And My.Settings.ModsY5 = 0 And My.Settings.ModsY6 = 0 And _
+            My.Settings.ModsY7 = 0 Then
+            My.Settings.ModsYNo = 1
+        Else : My.Settings.ModsYNo = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    'Red Mod Picture Change
+
+    Private Sub picModR1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picModR1.Click
+        My.Settings.Reload()
+        If My.Settings.ModsR1 = 0 Then
+            picModR1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.ModsR1 = 1
+        Else
+            picModR1.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.ModsR1 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picModR2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picModR2.Click
+        My.Settings.Reload()
+        If My.Settings.ModsR2 = 0 Then
+            picModR2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.ModsR2 = 1
+        Else
+            picModR2.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.ModsR2 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picModR3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picModR3.Click
+        My.Settings.Reload()
+        If My.Settings.ModsR3 = 0 Then
+            picModR3.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.ModsR3 = 1
+        Else
+            picModR3.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.ModsR3 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picModR4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picModR4.Click
+        My.Settings.Reload()
+        If My.Settings.ModsR4 = 0 Then
+            picModR4.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.ModsR4 = 1
+        Else
+            picModR4.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.ModsR4 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picModR5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picModR5.Click
+        My.Settings.Reload()
+        If My.Settings.ModsR5 = 0 Then
+            picModR5.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.ModsR5 = 1
+        Else
+            picModR5.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.ModsR5 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picModR6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picModR6.Click
+        My.Settings.Reload()
+        If My.Settings.ModsR6 = 0 Then
+            picModR6.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.ModsR6 = 1
+        Else
+            picModR6.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.ModsR6 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picModR7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picModR7.Click
+        My.Settings.Reload()
+        If My.Settings.ModsR7 = 0 Then
+            picModR7.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.ModsR7 = 1
+        Else
+            picModR7.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.ModsR7 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picModR8_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picModR8.Click
+        My.Settings.Reload()
+        If My.Settings.ModsR8 = 0 Then
+            picModR8.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.ModsR8 = 1
+        Else
+            picModR8.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.ModsR8 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picModR9_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picModR9.Click
+        My.Settings.Reload()
+        If My.Settings.ModsR9 = 0 Then
+            picModR9.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.ModsR9 = 1
+        Else
+            picModR9.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.ModsR9 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picModR10_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picModR10.Click
+        My.Settings.Reload()
+        If My.Settings.ModsR10 = 0 Then
+            picModR10.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.ModsR10 = 1
+        Else
+            picModR10.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.ModsR10 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub TabPage3_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TabPage3.MouseMove
+        My.Settings.Reload()
+        If My.Settings.ModsR1 = 0 And My.Settings.ModsR2 = 0 And My.Settings.ModsR3 = 0 And My.Settings.ModsR4 = 0 And My.Settings.ModsR5 = 0 And My.Settings.ModsR6 = 0 And _
+            My.Settings.ModsR7 = 0 And My.Settings.ModsR8 = 0 And My.Settings.ModsR9 = 0 And My.Settings.ModsR10 = 0 Then
+            My.Settings.ModsRNo = 1
+        Else : My.Settings.ModsRNo = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    ' Blue Mod Picture Change
+
+    Private Sub picModB1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picModB1.Click
+        My.Settings.Reload()
+        If My.Settings.ModsB1 = 0 Then
+            picModB1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.ModsB1 = 1
+        Else
+            picModB1.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.ModsB1 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picModB2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picModB2.Click
+        My.Settings.Reload()
+        If My.Settings.ModsB2 = 0 Then
+            picModB2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.ModsB2 = 1
+        Else
+            picModB2.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.ModsB2 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picModB3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picModB3.Click
+        My.Settings.Reload()
+        If My.Settings.ModsB3 = 0 Then
+            picModB3.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.ModsB3 = 1
+        Else
+            picModB3.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.ModsB3 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picModB4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picModB4.Click
+        My.Settings.Reload()
+        If My.Settings.ModsB4 = 0 Then
+            picModB4.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.ModsB4 = 1
+        Else
+            picModB4.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.ModsB4 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picModB5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picModB5.Click
+        My.Settings.Reload()
+        If My.Settings.ModsB5 = 0 Then
+            picModB5.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.ModsB5 = 1
+        Else
+            picModB5.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.ModsB5 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picModB6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picModB6.Click
+        My.Settings.Reload()
+        If My.Settings.ModsB6 = 0 Then
+            picModB6.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.ModsB6 = 1
+        Else
+            picModB6.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.ModsB6 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picModB7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picModB7.Click
+        My.Settings.Reload()
+        If My.Settings.ModsB7 = 0 Then
+            picModB7.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.ModsB7 = 1
+        Else
+            picModB7.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.ModsB7 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picModB8_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picModB8.Click
+        My.Settings.Reload()
+        If My.Settings.ModsB8 = 0 Then
+            picModB8.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.ModsB8 = 1
+        Else
+            picModB8.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.ModsB8 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picModB9_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picModB9.Click
+        My.Settings.Reload()
+        If My.Settings.ModsB9 = 0 Then
+            picModB9.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.ModsB9 = 1
+        Else
+            picModB9.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.ModsB9 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub TabPage4_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TabPage4.MouseMove
+        My.Settings.Reload()
+        If My.Settings.ModsB1 = 0 And My.Settings.ModsB2 = 0 And My.Settings.ModsB3 = 0 And My.Settings.ModsB4 = 0 And My.Settings.ModsB5 = 0 And My.Settings.ModsB6 = 0 And _
+            My.Settings.ModsB7 = 0 And My.Settings.ModsB8 = 0 And My.Settings.ModsB9 = 0 Then
+            My.Settings.ModsBNo = 1
+        Else : My.Settings.ModsBNo = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    'Assault Rifles Picture Change
+
+    Private Sub picAss1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picAss1.Click
+        My.Settings.Reload()
+        If My.Settings.WeapAss1 = 0 Then
+            picAss1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapAss1 = 1
+        Else
+            picAss1.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapAss1 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picAss2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picAss2.Click
+        My.Settings.Reload()
+        If My.Settings.WeapAss2 = 0 Then
+            picAss2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapAss2 = 1
+        Else
+            picAss2.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapAss2 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picAss3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picAss3.Click
+        My.Settings.Reload()
+        If My.Settings.WeapAss3 = 0 Then
+            picAss3.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapAss3 = 1
+        Else
+            picAss3.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapAss3 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picAss4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picAss4.Click
+        My.Settings.Reload()
+        If My.Settings.WeapAss4 = 0 Then
+            picAss4.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapAss4 = 1
+        Else
+            picAss4.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapAss4 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picAss5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picAss5.Click
+        My.Settings.Reload()
+        If My.Settings.WeapAss5 = 0 Then
+            picAss5.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapAss5 = 1
+        Else
+            picAss5.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapAss5 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picAss6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picAss6.Click
+        My.Settings.Reload()
+        If My.Settings.WeapAss6 = 0 Then
+            picAss6.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapAss6 = 1
+        Else
+            picAss6.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapAss6 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picAss7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picAss7.Click
+        My.Settings.Reload()
+        If My.Settings.WeapAss7 = 0 Then
+            picAss7.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapAss7 = 1
+        Else
+            picAss7.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapAss7 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picAss8_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picAss8.Click
+        My.Settings.Reload()
+        If My.Settings.WeapAss8 = 0 Then
+            picAss8.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapAss8 = 1
+        Else
+            picAss8.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapAss8 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picAss9_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picAss9.Click
+        My.Settings.Reload()
+        If My.Settings.WeapAss9 = 0 Then
+            picAss9.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapAss9 = 1
+        Else
+            picAss9.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapAss9 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picAss10_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picAss10.Click
+        My.Settings.Reload()
+        If My.Settings.WeapAss10 = 0 Then
+            picAss10.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapAss10 = 1
+        Else
+            picAss10.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapAss10 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picAss11_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picAss11.Click
+        My.Settings.Reload()
+        If My.Settings.WeapAss11 = 0 Then
+            picAss11.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapAss11 = 1
+        Else
+            picAss11.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapAss11 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub TabPage9_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TabPage9.MouseMove
+        My.Settings.Reload()
+        If My.Settings.WeapAss1 = 0 And My.Settings.WeapAss2 = 0 And My.Settings.WeapAss3 = 0 And My.Settings.WeapAss4 = 0 And My.Settings.WeapAss5 = 0 And My.Settings.WeapAss6 = 0 And _
+            My.Settings.WeapAss7 = 0 And My.Settings.WeapAss8 = 0 And My.Settings.WeapAss9 = 0 And My.Settings.WeapAss10 = 0 And My.Settings.WeapAss11 = 0 Then
+            My.Settings.WeapAssNo = 1
+        Else : My.Settings.WeapAssNo = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    'LMG Picture Change
+
+    Private Sub picLMG1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picLMG1.Click
+        My.Settings.Reload()
+        If My.Settings.WeapLMG1 = 0 Then
+            picLMG1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapLMG1 = 1
+        Else
+            picLMG1.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapLMG1 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picLMG2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picLMG2.Click
+        My.Settings.Reload()
+        If My.Settings.WeapLMG2 = 0 Then
+            picLMG2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapLMG2 = 1
+        Else
+            picLMG2.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapLMG2 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picLMG3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picLMG3.Click
+        My.Settings.Reload()
+        If My.Settings.WeapLMG3 = 0 Then
+            picLMG3.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapLMG3 = 1
+        Else
+            picLMG3.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapLMG3 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picLMG4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picLMG4.Click
+        My.Settings.Reload()
+        If My.Settings.WeapLMG4 = 0 Then
+            picLMG4.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapLMG4 = 1
+        Else
+            picLMG4.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapLMG4 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picLMG5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picLMG5.Click
+        My.Settings.Reload()
+        If My.Settings.WeapLMG5 = 0 Then
+            picLMG5.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapLMG5 = 1
+        Else
+            picLMG5.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapLMG5 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picLMG6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picLMG6.Click
+        My.Settings.Reload()
+        If My.Settings.WeapLMG6 = 0 Then
+            picLMG6.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapLMG6 = 1
+        Else
+            picLMG6.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapLMG6 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picLMG7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picLMG7.Click
+        My.Settings.Reload()
+        If My.Settings.WeapLMG7 = 0 Then
+            picLMG7.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapLMG7 = 1
+        Else
+            picLMG7.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapLMG7 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub TabPage10_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TabPage10.MouseMove
+        My.Settings.Reload()
+        If My.Settings.WeapLMG1 = 0 And My.Settings.WeapLMG2 = 0 And My.Settings.WeapLMG3 = 0 And My.Settings.WeapLMG4 = 0 And My.Settings.WeapLMG5 = 0 And My.Settings.WeapLMG6 = 0 _
+            And My.Settings.WeapLMG7 = 0 Then
+            My.Settings.WeapLMGNo = 1
+        Else : My.Settings.WeapLMGNo = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    'Rifle Picture Change
+
+    Private Sub picRifle1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picRifle1.Click
+        My.Settings.Reload()
+        If My.Settings.WeapRifle1 = 0 Then
+            picRifle1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapRifle1 = 1
+        Else
+            picRifle1.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapRifle1 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub PicRifle2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picRifle2.Click
+        My.Settings.Reload()
+        If My.Settings.WeapRifle2 = 0 Then
+            picRifle2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapRifle2 = 1
+        Else
+            picRifle2.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapRifle2 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picRifle3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picRifle3.Click
+        My.Settings.Reload()
+        If My.Settings.WeapRifle3 = 0 Then
+            picRifle3.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapRifle3 = 1
+        Else
+            picRifle3.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapRifle3 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picRifle4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picRifle4.Click
+        My.Settings.Reload()
+        If My.Settings.WeapRifle4 = 0 Then
+            picRifle4.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapRifle4 = 1
+        Else
+            picRifle4.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapRifle4 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picRifle5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picRifle5.Click
+        My.Settings.Reload()
+        If My.Settings.WeapRifle5 = 0 Then
+            picRifle5.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapRifle5 = 1
+        Else
+            picRifle5.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapRifle5 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picRifle6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picRifle6.Click
+        My.Settings.Reload()
+        If My.Settings.WeapRifle6 = 0 Then
+            picRifle6.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapRifle6 = 1
+        Else
+            picRifle6.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapRifle6 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub TabPage11_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TabPage11.MouseMove
+        My.Settings.Reload()
+        If My.Settings.WeapRifle1 = 0 And My.Settings.WeapRifle2 = 0 And My.Settings.WeapRifle3 = 0 And My.Settings.WeapRifle4 = 0 And My.Settings.WeapRifle5 = 0 And My.Settings.WeapRifle6 = 0 Then
+            My.Settings.WeapRifleNo = 1
+        Else : My.Settings.WeapRifleNo = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    'Shotgun Picture Change
+
+    Private Sub picShot1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picShot1.Click
+        My.Settings.Reload()
+        If My.Settings.WeapShot1 = 0 Then
+            picShot1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapShot1 = 1
+        Else
+            picShot1.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapShot1 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picShot2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picShot2.Click
+        My.Settings.Reload()
+        If My.Settings.WeapShot2 = 0 Then
+            picShot2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapShot2 = 1
+        Else
+            picShot2.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapShot2 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picShot3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picShot3.Click
+        My.Settings.Reload()
+        If My.Settings.WeapShot3 = 0 Then
+            picShot3.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapShot3 = 1
+        Else
+            picShot3.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapShot3 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picShot4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picShot4.Click
+        My.Settings.Reload()
+        If My.Settings.WeapShot4 = 0 Then
+            picShot4.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapShot4 = 1
+        Else
+            picShot4.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapShot4 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picShot5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picShot5.Click
+        My.Settings.Reload()
+        If My.Settings.WeapShot5 = 0 Then
+            picShot5.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapShot5 = 1
+        Else
+            picShot5.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapShot5 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub TabPage12_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TabPage12.MouseMove
+        My.Settings.Reload()
+        If My.Settings.WeapShot1 = 0 And My.Settings.WeapShot2 = 0 And My.Settings.WeapShot3 = 0 And My.Settings.WeapShot4 = 0 And My.Settings.WeapShot5 = 0 Then
+            My.Settings.WeapShotNo = 1
+        Else : My.Settings.WeapShotNo = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    'SMG Picture Change
+
+    Private Sub picSMG1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picSMG1.Click
+        My.Settings.Reload()
+        If My.Settings.WeapSMG1 = 0 Then
+            picSMG1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapSMG1 = 1
+        Else
+            picSMG1.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapSMG1 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picSMG2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picSMG2.Click
+        My.Settings.Reload()
+        If My.Settings.WeapSMG2 = 0 Then
+            picSMG2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapSMG2 = 1
+        Else
+            picSMG2.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapSMG2 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picSMG3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picSMG3.Click
+        My.Settings.Reload()
+        If My.Settings.WeapSMG3 = 0 Then
+            picSMG3.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapSMG3 = 1
+        Else
+            picSMG3.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapSMG3 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picSMG4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picSMG4.Click
+        My.Settings.Reload()
+        If My.Settings.WeapSMG4 = 0 Then
+            picSMG4.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapSMG4 = 1
+        Else
+            picSMG4.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapSMG4 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picSMG5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picSMG5.Click
+        My.Settings.Reload()
+        If My.Settings.WeapSMG5 = 0 Then
+            picSMG5.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapSMG5 = 1
+        Else
+            picSMG5.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapSMG5 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picSMG6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picSMG6.Click
+        My.Settings.Reload()
+        If My.Settings.WeapSMG6 = 0 Then
+            picSMG6.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapSMG6 = 1
+        Else
+            picSMG6.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapSMG6 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picSMG7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picSMG7.Click
+        My.Settings.Reload()
+        If My.Settings.WeapSMG7 = 0 Then
+            picSMG7.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapSMG7 = 1
+        Else
+            picSMG7.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapSMG7 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picSMG8_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picSMG8.Click
+        My.Settings.Reload()
+        If My.Settings.WeapSMG8 = 0 Then
+            picSMG8.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapSMG8 = 1
+        Else
+            picSMG8.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapSMG8 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picSMG9_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picSMG9.Click
+        My.Settings.Reload()
+        If My.Settings.WeapSMG9 = 0 Then
+            picSMG9.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapSMG9 = 1
+        Else
+            picSMG9.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapSMG9 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picSMG10_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picSMG10.Click
+        My.Settings.Reload()
+        If My.Settings.WeapSMG10 = 0 Then
+            picSMG10.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapSMG10 = 1
+        Else
+            picSMG10.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapSMG10 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub TabPage13_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TabPage13.MouseMove
+        My.Settings.Reload()
+        If My.Settings.WeapSMG1 = 0 And My.Settings.WeapSMG2 = 0 And My.Settings.WeapSMG3 = 0 And My.Settings.WeapSMG4 = 0 And My.Settings.WeapSMG5 = 0 And My.Settings.WeapSMG6 = 0 _
+         And My.Settings.WeapSMG7 = 0 And My.Settings.WeapSMG8 = 0 And My.Settings.WeapSMG9 = 0 And My.Settings.WeapSMG10 = 0 Then
+            My.Settings.WeapSMGNo = 1
+        Else : My.Settings.WeapSMGNo = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    'Sniper Picture Change
+
+    Private Sub picSniper1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picSniper1.Click
+        My.Settings.Reload()
+        If My.Settings.WeapSniper1 = 0 Then
+            picSniper1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapSniper1 = 1
+        Else
+            picSniper1.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapSniper1 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picSniper2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picSniper2.Click
+        My.Settings.Reload()
+        If My.Settings.WeapSniper2 = 0 Then
+            picSniper2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapSniper2 = 1
+        Else
+            picSniper2.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapSniper2 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picSniper3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picSniper3.Click
+        My.Settings.Reload()
+        If My.Settings.WeapSniper3 = 0 Then
+            picSniper3.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapSniper3 = 1
+        Else
+            picSniper3.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapSniper3 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picSniper4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picSniper4.Click
+        My.Settings.Reload()
+        If My.Settings.WeapSniper4 = 0 Then
+            picSniper4.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapSniper4 = 1
+        Else
+            picSniper4.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapSniper4 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picSniper5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picSniper5.Click
+        My.Settings.Reload()
+        If My.Settings.WeapSniper5 = 0 Then
+            picSniper5.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapSniper5 = 1
+        Else
+            picSniper5.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapSniper5 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub TabPage14_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TabPage14.MouseMove
+        My.Settings.Reload()
+        If My.Settings.WeapSniper1 = 0 And My.Settings.WeapSniper2 = 0 And My.Settings.WeapSniper3 = 0 And My.Settings.WeapSniper4 = 0 And My.Settings.WeapSniper5 = 0 Then
+            My.Settings.WeapSniperNo = 1
+        Else : My.Settings.WeapSniperNo = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    'Legendary Picture Change
+
+    Private Sub picLegPrim1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picLegPrim1.Click
+        My.Settings.Reload()
+        If My.Settings.WeapLegPrim1 = 0 Then
+            picLegPrim1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapLegPrim1 = 1
+        Else
+            picLegPrim1.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapLegPrim1 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picLegPrim2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picLegPrim2.Click
+        My.Settings.Reload()
+        If My.Settings.WeapLegPrim2 = 0 Then
+            picLegPrim2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapLegPrim2 = 1
+        Else
+            picLegPrim2.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapLegPrim2 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picLegPrim3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picLegPrim3.Click
+        My.Settings.Reload()
+        If My.Settings.WeapLegPrim3 = 0 Then
+            picLegPrim3.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapLegPrim3 = 1
+        Else
+            picLegPrim3.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapLegPrim3 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picLegPrim4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picLegPrim4.Click
+        My.Settings.Reload()
+        If My.Settings.WeapLegPrim4 = 0 Then
+            picLegPrim4.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapLegPrim4 = 1
+        Else
+            picLegPrim4.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapLegPrim4 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picLegPrim5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picLegPrim5.Click
+        My.Settings.Reload()
+        If My.Settings.WeapLegPrim5 = 0 Then
+            picLegPrim5.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapLegPrim5 = 1
+        Else
+            picLegPrim5.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapLegPrim5 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picLegPrim6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picLegPrim6.Click
+        My.Settings.Reload()
+        If My.Settings.WeapLegPrim6 = 0 Then
+            picLegPrim6.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapLegPrim6 = 1
+        Else
+            picLegPrim6.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapLegPrim6 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picLegPrim7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picLegPrim7.Click
+        My.Settings.Reload()
+        If My.Settings.WeapLegPrim7 = 0 Then
+            picLegPrim7.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapLegPrim7 = 1
+        Else
+            picLegPrim7.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapLegPrim7 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picLegPrim8_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picLegPrim8.Click
+        My.Settings.Reload()
+        If My.Settings.WeapLegPrim8 = 0 Then
+            picLegPrim8.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapLegPrim8 = 1
+        Else
+            picLegPrim8.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapLegPrim8 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picLegPrim9_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picLegPrim9.Click
+        My.Settings.Reload()
+        If My.Settings.WeapLegPrim9 = 0 Then
+            picLegPrim9.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapLegPrim9 = 1
+        Else
+            picLegPrim9.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapLegPrim9 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picLegSec1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picLegSec1.Click
+        My.Settings.Reload()
+        If My.Settings.WeapLegSec1 = 0 Then
+            picLegSec1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapLegSec1 = 1
+        Else
+            picLegSec1.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapLegSec1 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picLegSec2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picLegSec2.Click
+        My.Settings.Reload()
+        If My.Settings.WeapLegSec2 = 0 Then
+            picLegSec2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapLegSec2 = 1
+        Else
+            picLegSec2.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapLegSec2 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picLegSec3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picLegSec3.Click
+        My.Settings.Reload()
+        If My.Settings.WeapLegSec3 = 0 Then
+            picLegSec3.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapLegSec3 = 1
+        Else
+            picLegSec3.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapLegSec3 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picLegSec4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picLegSec4.Click
+        My.Settings.Reload()
+        If My.Settings.WeapLegSec4 = 0 Then
+            picLegSec4.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapLegSec4 = 1
+        Else
+            picLegSec4.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapLegSec4 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picLegSec5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picLegSec5.Click
+        My.Settings.Reload()
+        If My.Settings.WeapLegSec5 = 0 Then
+            picLegSec5.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapLegSec5 = 1
+        Else
+            picLegSec5.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapLegSec5 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub TabPage15_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TabPage15.MouseMove
+        My.Settings.Reload()
+        If My.Settings.WeapLegPrim1 = 0 And My.Settings.WeapLegPrim2 = 0 And My.Settings.WeapLegPrim3 = 0 And My.Settings.WeapLegPrim4 = 0 And My.Settings.WeapLegPrim5 = 0 And My.Settings.WeapLegPrim6 = 0 _
+         And My.Settings.WeapLegPrim7 = 0 And My.Settings.WeapLegPrim8 = 0 And My.Settings.WeapLegPrim9 = 0 Then
+            My.Settings.WeapLegNo = 1
+        Else : My.Settings.WeapLegNo = 0
+        End If
+        If My.Settings.Sec1 = 0 And My.Settings.Sec2 = 0 And My.Settings.Sec3 = 0 And My.Settings.Sec4 = 0 And My.Settings.Sec5 = 0 And My.Settings.Sec6 = 0 _
+         And My.Settings.Sec7 = 0 And My.Settings.Sec8 = 0 And My.Settings.Sec9 = 0 And My.Settings.Sec10 = 0 And My.Settings.Sec11 = 0 _
+         And My.Settings.Sec12 = 0 And My.Settings.Sec13 = 0 And My.Settings.WeapLegSec1 = 0 And My.Settings.WeapLegSec2 = 0 And My.Settings.WeapLegSec3 = 0 _
+         And My.Settings.WeapLegSec4 = 0 And My.Settings.WeapLegSec5 = 0 Then
+            My.Settings.SecNo = 1
+        Else : My.Settings.SecNo = 0
+        End If
+        'If My.Settings.WeapEx1 = 0 And My.Settings.WeapEx2 = 0 And My.Settings.WeapLegPrim10 = 0 And My.Settings.WeapLegPrim11 = 0 Then
+        '    My.Settings.WeapExNo = 1
+        'Else : My.Settings.WeapExNo = 0
+        'End If
+        My.Settings.Save()
+    End Sub
+
+    'Explosive Picture Change
+
+    Private Sub picEx1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picEx1.Click
+        My.Settings.Reload()
+        If My.Settings.WeapEx1 = 0 Then
+            picEx1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapEx1 = 1
+        Else
+            picEx1.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapEx1 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picEx2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picEx2.Click
+        My.Settings.Reload()
+        If My.Settings.WeapEx2 = 0 Then
+            picEx2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.WeapEx2 = 1
+        Else
+            picEx2.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.WeapEx2 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub TabPage16_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TabPage16.MouseMove
+        My.Settings.Reload()
+        If My.Settings.WeapEx1 = 0 And My.Settings.WeapEx2 = 0 Then 'And My.Settings.WeapLeg16 = 0 And My.Settings.WeapLeg17 = 0
+            My.Settings.WeapExNo = 1
+        Else : My.Settings.WeapExNo = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    'Secondary Picture Change
+
+    Private Sub picSecondary1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picSecondary1.Click
+        My.Settings.Reload()
+        If My.Settings.Sec1 = 0 Then
+            picSecondary1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.Sec1 = 1
+        Else
+            picSecondary1.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.Sec1 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picSecondary2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picSecondary2.Click
+        My.Settings.Reload()
+        If My.Settings.Sec2 = 0 Then
+            picSecondary2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.Sec2 = 1
+        Else
+            picSecondary2.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.Sec2 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picSecondary3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picSecondary3.Click
+        My.Settings.Reload()
+        If My.Settings.Sec3 = 0 Then
+            picSecondary3.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.Sec3 = 1
+        Else
+            picSecondary3.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.Sec3 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picSecondary4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picSecondary4.Click
+        My.Settings.Reload()
+        If My.Settings.Sec4 = 0 Then
+            picSecondary4.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.Sec4 = 1
+        Else
+            picSecondary4.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.Sec4 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picSecondary5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picSecondary5.Click
+        My.Settings.Reload()
+        If My.Settings.Sec5 = 0 Then
+            picSecondary5.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.Sec5 = 1
+        Else
+            picSecondary5.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.Sec5 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picSecondary6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picSecondary6.Click
+        My.Settings.Reload()
+        If My.Settings.Sec6 = 0 Then
+            picSecondary6.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.Sec6 = 1
+        Else
+            picSecondary6.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.Sec6 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picSecondary7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picSecondary7.Click
+        My.Settings.Reload()
+        If My.Settings.Sec7 = 0 Then
+            picSecondary7.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.Sec7 = 1
+        Else
+            picSecondary7.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.Sec7 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picSecondary8_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picSecondary8.Click
+        My.Settings.Reload()
+        If My.Settings.Sec8 = 0 Then
+            picSecondary8.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.Sec8 = 1
+        Else
+            picSecondary8.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.Sec8 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picSecondary9_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picSecondary9.Click
+        My.Settings.Reload()
+        If My.Settings.Sec9 = 0 Then
+            picSecondary9.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.Sec9 = 1
+        Else
+            picSecondary9.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.Sec9 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picSecondary10_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picSecondary10.Click
+        My.Settings.Reload()
+        If My.Settings.Sec10 = 0 Then
+            picSecondary10.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.Sec10 = 1
+        Else
+            picSecondary10.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.Sec10 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picSecondary11_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picSecondary11.Click
+        My.Settings.Reload()
+        If My.Settings.Sec11 = 0 Then
+            picSecondary11.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.Sec11 = 1
+        Else
+            picSecondary11.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.Sec11 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picSecondary12_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picSecondary12.Click
+        My.Settings.Reload()
+        If My.Settings.Sec12 = 0 Then
+            picSecondary12.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.Sec12 = 1
+        Else
+            picSecondary12.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.Sec12 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picSecondary13_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picSecondary13.Click
+        My.Settings.Reload()
+        If My.Settings.Sec13 = 0 Then
+            picSecondary13.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.Sec13 = 1
+        Else
+            picSecondary13.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.Sec13 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub TabPage6_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TabPage6.MouseMove
+        My.Settings.Reload()
+        If My.Settings.Sec1 = 0 And My.Settings.Sec2 = 0 And My.Settings.Sec3 = 0 And My.Settings.Sec4 = 0 And My.Settings.Sec5 = 0 And My.Settings.Sec6 = 0 _
+         And My.Settings.Sec7 = 0 And My.Settings.Sec8 = 0 And My.Settings.Sec9 = 0 And My.Settings.Sec10 = 0 And My.Settings.Sec11 = 0 _
+         And My.Settings.Sec12 = 0 And My.Settings.Sec13 = 0 And My.Settings.WeapLegSec1 = 0 And My.Settings.WeapLegSec2 = 0 And My.Settings.WeapLegSec3 = 0 _
+         And My.Settings.WeapLegSec4 = 0 And My.Settings.WeapLegSec5 = 0 Then
+            My.Settings.SecNo = 1
+        Else : My.Settings.SecNo = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    'Nade Picture Change
+
+    Private Sub picNade1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picNade1.Click
+        My.Settings.Reload()
+        If My.Settings.Nade1 = 0 Then
+            picNade1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.Nade1 = 1
+        Else
+            picNade1.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.Nade1 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picNade2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picNade2.Click
+        My.Settings.Reload()
+        If My.Settings.Nade2 = 0 Then
+            picNade2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.Nade2 = 1
+        Else
+            picNade2.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.Nade2 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picNade3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picNade3.Click
+        My.Settings.Reload()
+        If My.Settings.Nade3 = 0 Then
+            picNade3.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.Nade3 = 1
+        Else
+            picNade3.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.Nade3 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picNade4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picNade4.Click
+        My.Settings.Reload()
+        If My.Settings.Nade4 = 0 Then
+            picNade4.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.Nade4 = 1
+        Else
+            picNade4.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.Nade4 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picNade5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picNade5.Click
+        My.Settings.Reload()
+        If My.Settings.Nade5 = 0 Then
+            picNade5.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.Nade5 = 1
+        Else
+            picNade5.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.Nade5 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picNade6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picNade6.Click
+        My.Settings.Reload()
+        If My.Settings.Nade6 = 0 Then
+            picNade6.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.Nade6 = 1
+        Else
+            picNade6.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.Nade6 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picNade7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picNade7.Click
+        My.Settings.Reload()
+        If My.Settings.Nade7 = 0 Then
+            picNade7.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.Nade7 = 1
+        Else
+            picNade7.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.Nade7 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub TabPage7_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TabPage7.MouseMove
+        My.Settings.Reload()
+        If My.Settings.Nade1 = 0 And My.Settings.Nade2 = 0 And My.Settings.Nade3 = 0 And My.Settings.Nade4 = 0 And My.Settings.Nade5 = 0 And My.Settings.Nade6 = 0 And _
+            My.Settings.Nade7 = 0 Then
+            My.Settings.NadeNo = 1
+        Else : My.Settings.NadeNo = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    'Charmod Green Picture Change
+
+    Private Sub picCharGreen1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picCharGreen1.Click
+        My.Settings.Reload()
+        If My.Settings.CharGreen1 = 0 Then
+            picCharGreen1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.CharGreen1 = 1
+        Else
+            picCharGreen1.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.CharGreen1 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picCharGreen2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picCharGreen2.Click
+        My.Settings.Reload()
+        If My.Settings.CharGreen2 = 0 Then
+            picCharGreen2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.CharGreen2 = 1
+        Else
+            picCharGreen2.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.CharGreen2 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picCharGreen3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picCharGreen3.Click
+        My.Settings.Reload()
+        If My.Settings.CharGreen3 = 0 Then
+            picCharGreen3.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.CharGreen3 = 1
+        Else
+            picCharGreen3.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.CharGreen3 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picCharGreen4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picCharGreen4.Click
+        My.Settings.Reload()
+        If My.Settings.CharGreen4 = 0 Then
+            picCharGreen4.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.CharGreen4 = 1
+        Else
+            picCharGreen4.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.CharGreen4 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picCharGreen5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picCharGreen5.Click
+        My.Settings.Reload()
+        If My.Settings.CharGreen5 = 0 Then
+            picCharGreen5.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.CharGreen5 = 1
+        Else
+            picCharGreen5.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.CharGreen5 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picCharGreen6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picCharGreen6.Click
+        My.Settings.Reload()
+        If My.Settings.CharGreen6 = 0 Then
+            picCharGreen6.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.CharGreen6 = 1
+        Else
+            picCharGreen6.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.CharGreen6 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picCharGreen7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picCharGreen7.Click
+        My.Settings.Reload()
+        If My.Settings.CharGreen7 = 0 Then
+            picCharGreen7.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.CharGreen7 = 1
+        Else
+            picCharGreen7.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.CharGreen7 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picCharGreen8_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picCharGreen8.Click
+        My.Settings.Reload()
+        If My.Settings.CharGreen8 = 0 Then
+            picCharGreen8.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.CharGreen8 = 1
+        Else
+            picCharGreen8.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.CharGreen8 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    'Charmod Blue Picture Change
+
+    Private Sub picCharBlue1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picCharBlue1.Click
+        My.Settings.Reload()
+        If My.Settings.CharBlue1 = 0 Then
+            picCharBlue1.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.CharBlue1 = 1
+        Else
+            picCharBlue1.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.CharBlue1 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picCharBlue2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picCharBlue2.Click
+        My.Settings.Reload()
+        If My.Settings.CharBlue2 = 0 Then
+            picCharBlue2.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.CharBlue2 = 1
+        Else
+            picCharBlue2.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.CharBlue2 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picCharBlue3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picCharBlue3.Click
+        My.Settings.Reload()
+        If My.Settings.CharBlue3 = 0 Then
+            picCharBlue3.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.CharBlue3 = 1
+        Else
+            picCharBlue3.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.CharBlue3 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picCharBlue4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picCharBlue4.Click
+        My.Settings.Reload()
+        If My.Settings.CharBlue4 = 0 Then
+            picCharBlue4.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.CharBlue4 = 1
+        Else
+            picCharBlue4.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.CharBlue4 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picCharBlue5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picCharBlue5.Click
+        My.Settings.Reload()
+        If My.Settings.CharBlue5 = 0 Then
+            picCharBlue5.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.CharBlue5 = 1
+        Else
+            picCharBlue5.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.CharBlue5 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub picCharBlue6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picCharBlue6.Click
+        My.Settings.Reload()
+        If My.Settings.CharBlue6 = 0 Then
+            picCharBlue6.BackgroundImage = My.Resources.Background_ModBorderSelectedThick
+            My.Settings.CharBlue6 = 1
+        Else
+            picCharBlue6.BackgroundImage = My.Resources.Background_ModBorderThick
+            My.Settings.CharBlue6 = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub TabPage8_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TabPage8.MouseMove
+        My.Settings.Reload()
+        If My.Settings.CharGreen1 = 0 And My.Settings.CharGreen2 = 0 And My.Settings.CharGreen3 = 0 And My.Settings.CharGreen4 = 0 And My.Settings.CharGreen5 = 0 And My.Settings.CharGreen6 = 0 And _
+            My.Settings.CharGreen7 = 0 And My.Settings.CharGreen8 = 0 Then
+            My.Settings.CharGreenNo = 1
+        Else : My.Settings.CharGreenNo = 0
+        End If
+        If My.Settings.CharBlue1 = 0 And My.Settings.CharBlue2 = 0 And My.Settings.CharBlue3 = 0 And My.Settings.CharBlue4 = 0 And My.Settings.CharBlue5 = 0 And My.Settings.CharBlue6 = 0 Then
+            My.Settings.CharBlueNo = 1
+        Else : My.Settings.CharBlueNo = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    'No R195 Mods
+    Private Sub ButtonNoR195_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonNoR195.Click
+        My.Settings.Reload()
+        'Purple Mods Out
+        My.Settings.ModsP4 = 0
+        picModP4.BackgroundImage = My.Resources.Background_ModBorderThick
+        My.Settings.ModsP5 = 0
+        picModP5.BackgroundImage = My.Resources.Background_ModBorderThick
+        'Yellow Mods Out
+        My.Settings.ModsY1 = 0
+        picModY1.BackgroundImage = My.Resources.Background_ModBorderThick
+        'Red Mods Out
+        My.Settings.ModsR10 = 0
+        picModR10.BackgroundImage = My.Resources.Background_ModBorderThick
+        'Secondaries Out
+        My.Settings.Sec11 = 0
+        picSecondary11.BackgroundImage = My.Resources.Background_ModBorderThick
+        'Nades Out
+        My.Settings.Nade3 = 0
+        picNade3.BackgroundImage = My.Resources.Background_ModBorderThick
+        My.Settings.Nade4 = 0
+        picNade4.BackgroundImage = My.Resources.Background_ModBorderThick
+        My.Settings.Nade5 = 0
+        picNade5.BackgroundImage = My.Resources.Background_ModBorderThick
+        'Charmods Out
+        My.Settings.CharGreen4 = 0
+        picCharGreen4.BackgroundImage = My.Resources.Background_ModBorderThick
+        My.Settings.CharGreen5 = 0
+        picCharGreen5.BackgroundImage = My.Resources.Background_ModBorderThick
+
+        My.Settings.CharBlue4 = 0
+        picCharBlue4.BackgroundImage = My.Resources.Background_ModBorderThick
+        My.Settings.CharBlue5 = 0
+        picCharBlue5.BackgroundImage = My.Resources.Background_ModBorderThick
+        My.Settings.CharBlue6 = 0
+        picCharBlue6.BackgroundImage = My.Resources.Background_ModBorderThick
+        My.Settings.Save()
+    End Sub
+
+    'Empty Mods Picture Change
+    Private Sub picEmptyMods_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picEmptyMods.Click
+        My.Settings.Reload()
+        If My.Settings.EmptyMods = 0 Then
+            picEmptyMods.Image = My.Resources.emptymodsselected
+            My.Settings.EmptyMods = 1
+        Else
+            picEmptyMods.Image = My.Resources.emptymods
+            My.Settings.EmptyMods = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    'Challenges Picture Change
+    Private Sub picChallenges_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picChallenges.Click
+        My.Settings.Reload()
+        If My.Settings.Challenges = 0 Then
+            picChallenges.Image = My.Resources.challengesselected
+            My.Settings.Challenges = 1
+        Else
+            picChallenges.Image = My.Resources.challenges
+            My.Settings.Challenges = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+    'Hardmode Picture Change
+    Private Sub picHardMode_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picHardMode.Click
+        My.Settings.Reload()
+        If My.Settings.HardMode = 0 Then
+            picHardMode.Image = My.Resources.hardmodeselected
+            My.Settings.HardMode = 1
+            MsgBox("Warning! Hardmode is very experimental and it currently ignores all settings made above, use at own risk!", , ("Warning!"))
+        Else
+            picHardMode.Image = My.Resources.hardmode
+            My.Settings.HardMode = 0
+        End If
+        My.Settings.Save()
+    End Sub
+
+End Class
